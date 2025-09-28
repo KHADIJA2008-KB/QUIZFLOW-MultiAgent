@@ -1,257 +1,337 @@
 {
   "quiz_metadata": {
-    "subject": "Computer Science",
+    "subject": "Artificial Intelligence & Machine Learning",
     "total_questions": 25,
     "estimated_time_minutes": 30,
-    "difficulty_distribution": {"Easy": 10, "Medium": 10, "Hard": 5}
+    "difficulty_distribution": {
+      "Easy": 6,
+      "Medium": 10,
+      "Hard": 9
+    }
   },
   "questions": [
     {
-      "id": "q1",
+      "id": "1",
       "type": "multiple_choice",
       "difficulty": "Easy",
-      "topic": "Algorithms",
-      "subtopic": "Sorting Algorithms",
-      "question": "Which of the following sorting algorithms has the best average time complexity?",
-      "options": ["Bubble Sort", "Insertion Sort", "Merge Sort", "Selection Sort"],
-      "correct_answer": "Merge Sort",
-      "explanation": "Merge Sort has an average time complexity of O(n log n), while the others have O(n^2) complexities."
+      "topic": "Introduction to AI and ML",
+      "subtopic": "Definition of AI",
+      "question": "What does the term 'Artificial Intelligence' primarily refer to?",
+      "options": [
+        "Computer systems that perform tasks requiring human intelligence",
+        "Only robots performing physical tasks",
+        "The capability of a computer to solve mathematical equations",
+        "An automated software program that doesn't require human input"
+      ],
+      "correct_answer": "Computer systems that perform tasks requiring human intelligence",
+      "explanation": "Artificial Intelligence encompasses a range of computer systems that emulate human cognitive functions."
     },
     {
-      "id": "q2",
-      "type": "multiple_choice",
-      "difficulty": "Easy",
-      "topic": "Data Structures",
-      "subtopic": "Arrays and Linked Lists",
-      "question": "What is the primary advantage of linked lists over arrays?",
-      "options": ["Random access", "Dynamic sizing", "Memory efficiency", "Better performance"],
-      "correct_answer": "Dynamic sizing",
-      "explanation": "Linked lists can grow and shrink in size more easily than arrays, which have a fixed size."
-    },
-    {
-      "id": "q3",
+      "id": "2",
       "type": "multiple_choice",
       "difficulty": "Medium",
-      "topic": "Algorithms",
-      "subtopic": "Searching Algorithms",
-      "question": "In a binary search algorithm, what condition must be true for it to be applied?",
-      "options": ["Array must be sorted", "Array must be unsorted", "Array can contain duplicates", "Array must be of fixed size"],
-      "correct_answer": "Array must be sorted",
-      "explanation": "Binary search only works on sorted arrays, as it repeatedly divides the search interval in half."
+      "topic": "Introduction to AI and ML",
+      "subtopic": "History of AI",
+      "question": "Which of the following events is considered a milestone in the history of Artificial Intelligence?",
+      "options": [
+        "The launch of the first manned flight",
+        "The creation of the Turing Test by Alan Turing",
+        "The development of the first computer virus",
+        "The invention of the internet"
+      ],
+      "correct_answer": "The creation of the Turing Test by Alan Turing",
+      "explanation": "The Turing Test, formulated by Alan Turing in 1950, is a foundational concept in AI history."
     },
     {
-      "id": "q4",
-      "type": "multiple_choice",
-      "difficulty": "Medium",
-      "topic": "Complexity Analysis",
-      "subtopic": "Big O Notation",
-      "question": "Which of the following complexities represents a linear search algorithm?",
-      "options": ["O(1)", "O(log n)", "O(n)", "O(n^2)"],
-      "correct_answer": "O(n)",
-      "explanation": "A linear search examines each element in the list, resulting in a time complexity of O(n)."
-    },
-    {
-      "id": "q5",
+      "id": "3",
       "type": "true_false",
       "difficulty": "Easy",
-      "topic": "Machine Learning Basics",
-      "subtopic": "Introduction to ML",
-      "question": "Supervised learning is a type of machine learning where the model learns from labeled data.",
+      "topic": "Introduction to AI and ML",
+      "subtopic": "Types of Machine Learning",
+      "question": "Supervised learning requires labeled data.",
       "correct_answer": "True"
     },
     {
-      "id": "q6",
+      "id": "4",
+      "type": "multiple_choice",
+      "difficulty": "Medium",
+      "topic": "Machine Learning Fundamentals",
+      "subtopic": "Data Preprocessing",
+      "question": "Which of the following techniques is NOT part of data preprocessing?",
+      "options": [
+        "Normalization",
+        "Label Encoding",
+        "Feature Extraction",
+        "Algorithm Optimization"
+      ],
+      "correct_answer": "Algorithm Optimization",
+      "explanation": "Algorithm optimization involves model training rather than preparing data for analysis."
+    },
+    {
+      "id": "5",
+      "type": "multiple_choice",
+      "difficulty": "Medium",
+      "topic": "Machine Learning Fundamentals",
+      "subtopic": "Model Evaluation Metrics",
+      "question": "Which of the following metrics is most commonly used to evaluate classification models?",
+      "options": [
+        "Mean squared error",
+        "Accuracy",
+        "R-squared",
+        "Confusion Matrix"
+      ],
+      "correct_answer": "Accuracy",
+      "explanation": "Accuracy measures the percentage of correct predictions in classification tasks."
+    },
+    {
+      "id": "6",
       "type": "true_false",
       "difficulty": "Medium",
-      "topic": "Network Security",
-      "subtopic": "Firewalls and VPNs",
-      "question": "A firewall can prevent unauthorized access to a network.",
-      "correct_answer": "True"
-    },
-    {
-      "id": "q7",
-      "type": "true_false",
-      "difficulty": "Hard",
-      "topic": "Database Management",
-      "subtopic": "Transactions and ACID Properties",
-      "question": "The 'Isolation' property in ACID ensures that database transactions appear to be executed sequentially.",
-      "correct_answer": "True"
-    },
-    {
-      "id": "q8",
-      "type": "short_answer",
-      "difficulty": "Easy",
-      "topic": "Operating Systems",
-      "subtopic": "Process Management",
-      "question": "What is the difference between a process and a thread?",
-      "correct_answer": "A process is a program in execution, consisting of its own memory space, while a thread is a smaller unit of a process that can be executed independently and shares the same memory space with other threads in the same process."
-    },
-    {
-      "id": "q9",
-      "type": "short_answer",
-      "difficulty": "Medium",
-      "topic": "Data Structures",
-      "subtopic": "Stacks and Queues",
-      "question": "Explain a real-world application of a queue data structure.",
-      "correct_answer": "Queues are used in print spooling systems where print jobs are lined up for processing in the order they are received."
-    },
-    {
-      "id": "q10",
-      "type": "short_answer",
-      "difficulty": "Hard",
-      "topic": "Complexity Analysis",
-      "subtopic": "NP-Completeness",
-      "question": "What is NP-completeness in computational theory?",
-      "correct_answer": "NP-completeness refers to a class of decision problems for which no efficient solution is known, and if a solution can be verified quickly (in polynomial time), it is in 'NP'. If any NP-complete problem can be solved quickly, all problems in NP can also be solved quickly."
-    },
-    {
-      "id": "q11",
-      "type": "multiple_choice",
-      "difficulty": "Medium",
-      "topic": "Programming Concepts",
-      "subtopic": "Object-Oriented Programming",
-      "question": "Which of the following is a core principle of object-oriented programming?",
-      "options": ["Inheritance", "Iteration", "Recursion", "Compilation"],
-      "correct_answer": "Inheritance",
-      "explanation": "Inheritance allows classes to inherit properties and behaviors from other classes, fostering code reuse and organization."
-    },
-    {
-      "id": "q12",
-      "type": "multiple_choice",
-      "difficulty": "Medium",
-      "topic": "Network Security",
-      "subtopic": "Intrusion Detection Systems",
-      "question": "What is the main purpose of an intrusion detection system (IDS)?",
-      "options": ["To prevent all attacks", "To monitor and analyze network traffic", "To encrypt data", "To provide virtual private networks"],
-      "correct_answer": "To monitor and analyze network traffic",
-      "explanation": "An IDS primarily monitors network traffic for suspicious activity and alerts administrators of potential threats."
-    },
-    {
-      "id": "q13",
-      "type": "multiple_choice",
-      "difficulty": "Hard",
-      "topic": "Database Management",
-      "subtopic": "Transactions and ACID Properties",
-      "question": "What does the 'Durability' property of ACID guarantee?",
-      "options": ["Data is always consistent", "Data is saved permanently after a transaction commits", "Transactions are completed in order", "No data is lost after a crash"],
-      "correct_answer": "Data is saved permanently after a transaction commits",
-      "explanation": "Durability ensures that once a transaction has been committed, it remains so, even in the case of a system failure."
-    },
-    {
-      "id": "q14",
-      "type": "multiple_choice",
-      "difficulty": "Hard",
-      "topic": "Complexity Analysis",
-      "subtopic": "NP-Completeness",
-      "question": "Which of the following problems is NP-complete?",
-      "options": ["Sorting a list of integers", "Traveling Salesman Problem", "Finding the maximum of a list", "Searching for an element in a list"],
-      "correct_answer": "Traveling Salesman Problem",
-      "explanation": "The Traveling Salesman Problem is NP-complete because no efficient solution is known to find the shortest possible route that visits a set of cities."
-    },
-    {
-      "id": "q15",
-      "type": "true_false",
-      "difficulty": "Easy",
-      "topic": "Algorithms",
-      "subtopic": "Sorting Algorithms",
-      "question": "Bubble sort is more efficient than quick sort for large datasets.",
+      "topic": "Machine Learning Fundamentals",
+      "subtopic": "Overfitting vs. Underfitting",
+      "question": "Underfitting occurs when a model is too complex to fit the training data.",
       "correct_answer": "False"
     },
     {
-      "id": "q16",
-      "type": "true_false",
+      "id": "7",
+      "type": "multiple_choice",
       "difficulty": "Medium",
-      "topic": "Programming Concepts",
-      "subtopic": "Functional Programming",
-      "question": "Functional programming emphasizes immutability and first-class functions.",
+      "topic": "Neural Networks",
+      "subtopic": "Basic Architecture of Neural Networks",
+      "question": "What is the function of the activation function in a neural network?",
+      "options": [
+        "To scale the input data",
+        "To introduce non-linearity",
+        "To optimize the weights",
+        "To initialize network parameters"
+      ],
+      "correct_answer": "To introduce non-linearity",
+      "explanation": "Activation functions help in modeling complex relationships by adding non-linearity to the network."
+    },
+    {
+      "id": "8",
+      "type": "multiple_choice",
+      "difficulty": "Hard",
+      "topic": "Neural Networks",
+      "subtopic": "Training Neural Networks",
+      "question": "Which algorithm is primarily used in training neural networks?",
+      "options": [
+        "Gradient Descent",
+        "K-Means Clustering",
+        "Support Vector Machines",
+        "Decision Trees"
+      ],
+      "correct_answer": "Gradient Descent",
+      "explanation": "Gradient Descent optimizes the weights in neural networks by minimizing the loss function."
+    },
+    {
+      "id": "9",
+      "type": "true_false",
+      "difficulty": "Hard",
+      "topic": "Neural Networks",
+      "subtopic": "Common Types of Neural Networks",
+      "question": "Convolutional Neural Networks are mainly used for image processing tasks.",
       "correct_answer": "True"
     },
     {
-      "id": "q17",
+      "id": "10",
+      "type": "multiple_choice",
+      "difficulty": "Medium",
+      "topic": "Deep Learning",
+      "subtopic": "Deep Learning Frameworks",
+      "question": "Which of the following frameworks is widely known for building deep learning applications?",
+      "options": [
+        "TensorFlow",
+        "Pandas",
+        "NumPy",
+        "Matplotlib"
+      ],
+      "correct_answer": "TensorFlow",
+      "explanation": "TensorFlow is a popular framework for deep learning designed by Google, suitable for building models."
+    },
+    {
+      "id": "11",
+      "type": "multiple_choice",
+      "difficulty": "Medium",
+      "topic": "Natural Language Processing (NLP)",
+      "subtopic": "Basic Concepts in NLP",
+      "question": "What is the process of breaking text into individual words or tokens called?",
+      "options": [
+        "Stemming",
+        "Tokenization",
+        "Segmentation",
+        "Normalization"
+      ],
+      "correct_answer": "Tokenization",
+      "explanation": "Tokenization is the process of splitting text into smaller units like words or phrases."
+    },
+    {
+      "id": "12",
       "type": "true_false",
       "difficulty": "Hard",
-      "topic": "Machine Learning Basics",
-      "subtopic": "Overfitting and Underfitting",
-      "question": "Overfitting occurs when a model performs well on training data but poorly on unseen data.",
+      "topic": "Natural Language Processing (NLP)",
+      "subtopic": "Sentiment Analysis",
+      "question": "Sentiment analysis can only determine positive and negative sentiments.",
+      "correct_answer": "False"
+    },
+    {
+      "id": "13",
+      "type": "multiple_choice",
+      "difficulty": "Hard",
+      "topic": "Computer Vision",
+      "subtopic": "Image Processing Techniques",
+      "question": "Which image processing technique is used to enhance the brightness and contrast of an image?",
+      "options": [
+        "Filtering",
+        "Histogram Equalization",
+        "Resizing",
+        "Noise Reduction"
+      ],
+      "correct_answer": "Histogram Equalization",
+      "explanation": "Histogram equalization improves the contrast by redistributing the pixel intensity values."
+    },
+    {
+      "id": "14",
+      "type": "true_false",
+      "difficulty": "Hard",
+      "topic": "Computer Vision",
+      "subtopic": "Object Detection and Recognition",
+      "question": "Object detection determines the location of objects in images.",
       "correct_answer": "True"
     },
     {
-      "id": "q18",
+      "id": "15",
       "type": "short_answer",
       "difficulty": "Medium",
-      "topic": "Machine Learning Basics",
-      "subtopic": "Feature Engineering",
-      "question": "What is 'feature scaling' in machine learning?",
-      "correct_answer": "Feature scaling is the method of normalizing or standardizing the range of independent variables or features of data, to improve the performance of machine learning algorithms."
+      "topic": "Ethics in AI",
+      "subtopic": "Bias and Fairness",
+      "question": "Explain why bias in AI is a significant issue.",
+      "correct_answer": "Bias in AI can lead to unfair outcomes and reinforce societal inequalities, affecting decision-making processes."
     },
     {
-      "id": "q19",
-      "type": "short_answer",
-      "difficulty": "Medium",
-      "topic": "Network Security",
-      "subtopic": "Ethical Hacking Concepts",
-      "question": "What is penetration testing?",
-      "correct_answer": "Penetration testing is a simulated cyber attack on a computer system or network to evaluate its security and identify vulnerabilities."
-    },
-    {
-      "id": "q20",
-      "type": "short_answer",
-      "difficulty": "Hard",
-      "topic": "Data Structures",
-      "subtopic": "Trees and Graphs",
-      "question": "Explain the difference between a binary tree and a binary search tree.",
-      "correct_answer": "A binary tree can have any arrangement of nodes, while a binary search tree has specific ordering properties, where for any given node, all values in the left subtree are less, and all values in the right subtree are greater."
-    },
-    {
-      "id": "q21",
-      "type": "multiple_choice",
-      "difficulty": "Medium",
-      "topic": "Operating Systems",
-      "subtopic": "Memory Management",
-      "question": "What is the purpose of paging in memory management?",
-      "options": ["To speed up processing", "To allow efficient use of memory", "To eliminate fragmentation", "To speed up data transfer"],
-      "correct_answer": "To allow efficient use of memory",
-      "explanation": "Paging divides memory into fixed-size blocks to manage memory allocation efficiently, thereby reducing fragmentation."
-    },
-    {
-      "id": "q22",
-      "type": "multiple_choice",
-      "difficulty": "Medium",
-      "topic": "Algorithms",
-      "subtopic": "Graph Algorithms",
-      "question": "Which algorithm is primarily used to find the shortest path in a weighted graph?",
-      "options": ["Dijkstra's Algorithm", "Depth-First Search", "Breadth-First Search", "Prim's Algorithm"],
-      "correct_answer": "Dijkstra's Algorithm",
-      "explanation": "Dijkstra's algorithm efficiently finds the shortest paths between nodes in a weighted graph."
-    },
-    {
-      "id": "q23",
+      "id": "16",
       "type": "multiple_choice",
       "difficulty": "Hard",
-      "topic": "Complexity Analysis",
-      "subtopic": "Comparative Analysis",
-      "question": "Which of the following best describes the time complexity of an algorithm that performs linear search?",
-      "options": ["O(log n)", "O(n)", "O(n log n)", "O(1)"],
-      "correct_answer": "O(n)",
-      "explanation": "Linear search examines each element until it finds the target or reaches the end, resulting in O(n) complexity."
+      "topic": "Ethics in AI",
+      "subtopic": "Data Privacy",
+      "question": "Which regulation is primarily aimed at protecting individual data privacy in the EU?",
+      "options": [
+        "GDPR",
+        "HIPAA",
+        "FERPA",
+        "CCPA"
+      ],
+      "correct_answer": "GDPR",
+      "explanation": "The General Data Protection Regulation (GDPR) sets guidelines for the collection and processing of personal information within the EU."
     },
     {
-      "id": "q24",
+      "id": "17",
+      "type": "short_answer",
+      "difficulty": "Hard",
+      "topic": "Ethics in AI",
+      "subtopic": "Future of AI",
+      "question": "What is one potential societal impact of AI?",
+      "correct_answer": "One potential impact is job displacement in various industries as AI systems automate tasks traditionally performed by humans."
+    },
+    {
+      "id": "18",
+      "type": "short_answer",
+      "difficulty": "Medium",
+      "topic": "Machine Learning Fundamentals",
+      "subtopic": "Overfitting vs. Underfitting",
+      "question": "Describe the difference between overfitting and underfitting in model training.",
+      "correct_answer": "Overfitting occurs when a model learns too much from training data, capturing noise, while underfitting happens when a model is too simple to capture the underlying pattern."
+    },
+    {
+      "id": "19",
+      "type": "multiple_choice",
+      "difficulty": "Hard",
+      "topic": "Deep Learning",
+      "subtopic": "Transfer Learning",
+      "question": "What is transfer learning primarily used for?",
+      "options": [
+        "To improve performance by applying knowledge from one task to a different but related task",
+        "To train networks from scratch every time",
+        "To swap weights between two models",
+        "To enhance the input data variable"
+      ],
+      "correct_answer": "To improve performance by applying knowledge from one task to a different but related task",
+      "explanation": "Transfer learning enables the rapid development of models by leveraging pre-trained models."
+    },
+    {
+      "id": "20",
+      "type": "multiple_choice",
+      "difficulty": "Medium",
+      "topic": "Computer Vision",
+      "subtopic": "Applications of Computer Vision",
+      "question": "Which of the following is NOT an application of computer vision?",
+      "options": [
+        "Facial recognition",
+        "Autonomous vehicles",
+        "Speech recognition",
+        "Medical imaging"
+      ],
+      "correct_answer": "Speech recognition",
+      "explanation": "Speech recognition is a domain of Natural Language Processing, not computer vision."
+    },
+    {
+      "id": "21",
+      "type": "multiple_choice",
+      "difficulty": "Hard",
+      "topic": "Natural Language Processing (NLP)",
+      "subtopic": "Language Models",
+      "question": "What does an N-gram model in NLP refer to?",
+      "options": [
+        "A type of neural network architecture",
+        "A statistical language model that predicts the next item in a sequence based on the previous N items",
+        "A method to encode categorical data",
+        "A technique for machine translation"
+      ],
+      "correct_answer": "A statistical language model that predicts the next item in a sequence based on the previous N items",
+      "explanation": "An N-gram model uses the frequency of N contiguous words to predict the likelihood of sequences."
+    },
+    {
+      "id": "22",
       "type": "true_false",
       "difficulty": "Hard",
-      "topic": "Data Structures",
-      "subtopic": "Trees and Graphs",
-      "question": "An AVL tree is a self-balancing binary search tree.",
+      "topic": "Deep Learning",
+      "subtopic": "Applications of Deep Learning",
+      "question": "Deep learning has been successfully applied in areas such as healthcare, finance, and autonomous driving.",
       "correct_answer": "True"
     },
     {
-      "id": "q25",
-      "type": "short_answer",
+      "id": "23",
+      "type": "multiple_choice",
       "difficulty": "Hard",
-      "topic": "Database Management",
-      "subtopic": "Normalization",
-      "question": "What are functional dependencies in database normalization?",
-      "correct_answer": "Functional dependencies are a relationship that exists when one attribute uniquely determines another attribute, crucial for determining the normalization level of a database."
+      "topic": "Machine Learning Fundamentals",
+      "subtopic": "Model Evaluation Metrics",
+      "question": "Which metric is used to specifically evaluate false positives in a model?",
+      "options": [
+        "Accuracy",
+        "Precision",
+        "Recall",
+        "F1 Score"
+      ],
+      "correct_answer": "Precision",
+      "explanation": "Precision measures the proportion of true positives to the total predicted positives, highlighting false positives."
+    },
+    {
+      "id": "24",
+      "type": "short_answer",
+      "difficulty": "Medium",
+      "topic": "Ethics in AI",
+      "subtopic": "Bias and Fairness",
+      "question": "Explain one way to mitigate bias in AI systems.",
+      "correct_answer": "One way to mitigate bias is to ensure diverse and representative datasets are used during the training phase."
+    },
+    {
+      "id": "25",
+      "type": "true_false",
+      "difficulty": "Easy",
+      "topic": "Introduction to AI and ML",
+      "subtopic": "Definition of AI",
+      "question": "AI systems can only operate without any human input.",
+      "correct_answer": "False"
     }
   ]
 }
