@@ -149,20 +149,21 @@ class QuizflowCrew:
             print(f"File content preview: {content[:200] if 'content' in locals() else 'Could not read file'}")
             raise
 
-    def evaluate_user_answers(self, user_answers: Dict[str, Any]) -> Dict[str, Any]:
+    def evaluate_user_answers(self, user_answers: Dict[str, Any], quiz_data: Dict[str, Any] = None) -> Dict[str, Any]:
         """Evaluate user answers against the correct answers"""
         print("🔍 Starting quiz evaluation...")
         
         try:
-            # The evaluation task will be triggered with user answers as context
-            # For now, we'll simulate this by reading the quiz file and comparing answers
-            quiz_file = self.data_dir / "quiz.json"
-            
-            if not quiz_file.exists():
-                raise FileNotFoundError("No quiz file found for evaluation")
-            
-            with open(quiz_file, 'r') as f:
-                quiz_data = json.load(f)
+            # Use provided quiz data or fallback to reading from file
+            if quiz_data is None:
+                # Fallback to reading the quiz file
+                quiz_file = self.data_dir / "quiz.json"
+                
+                if not quiz_file.exists():
+                    raise FileNotFoundError("No quiz file found for evaluation")
+                
+                with open(quiz_file, 'r') as f:
+                    quiz_data = json.load(f)
             
             # Create a simple evaluation (this would normally be done by the quiz_checker agent)
             results = self._simple_evaluation(quiz_data, user_answers)
@@ -187,7 +188,12 @@ class QuizflowCrew:
 
     def _simple_evaluation(self, quiz_data: Dict[str, Any], user_answers: Dict[str, Any]) -> Dict[str, Any]:
         """Simple evaluation logic (placeholder for agent-based evaluation)"""
-        questions = quiz_data.get('questions', [])
+        # Handle both formats: direct questions array or nested quiz.questions
+        if 'quiz' in quiz_data and 'questions' in quiz_data['quiz']:
+            questions = quiz_data['quiz']['questions']
+        else:
+            questions = quiz_data.get('questions', [])
+        
         total_questions = len(questions)
         correct_answers = 0
         question_results = []

@@ -180,7 +180,8 @@ async def submit_answers(answers: QuizAnswers):
             **answers.answers
         }
         
-        results = crew_instance.evaluate_user_answers(user_answers)
+        # Pass the quiz data from the session to the evaluation
+        results = crew_instance.evaluate_user_answers(user_answers, session.quiz_data)
         session.status = "completed"
         session.results = results
         
