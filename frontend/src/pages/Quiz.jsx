@@ -13,6 +13,7 @@ const Quiz = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
   const [answers, setAnswers] = useState({})
   const [timeRemaining, setTimeRemaining] = useState(null)
+  const [timerInitialized, setTimerInitialized] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [error, setError] = useState(null)
 
@@ -23,11 +24,12 @@ const Quiz = () => {
   }, [sessionId])
 
   useEffect(() => {
-    if (quizData?.quiz?.quiz_metadata) {
+    if (quizData?.quiz?.quiz_metadata && !timerInitialized) {
       const estimatedMinutes = quizData.quiz.quiz_metadata.estimated_time_minutes || 20
       setTimeRemaining(estimatedMinutes * 60)
+      setTimerInitialized(true)
     }
-  }, [quizData])
+  }, [quizData, timerInitialized])
 
   useEffect(() => {
     if (timeRemaining > 0) {
@@ -46,9 +48,12 @@ const Quiz = () => {
       setQuizStatus(status)
 
       if (status === 'ready') {
-        const quizResponse = await quizAPI.getQuiz(sessionId)
-        setQuizData(quizResponse.data)
-        console.log('Quiz loaded successfully')
+        // Only fetch quiz data if we haven't loaded it yet
+        if (!quizData) {
+          const quizResponse = await quizAPI.getQuiz(sessionId)
+          setQuizData(quizResponse.data)
+          console.log('Quiz loaded successfully')
+        }
       } else if (status === 'failed') {
         const errorMsg = statusResponse.data.error_message || 'Unknown error'
         setError(`Quiz generation failed: ${errorMsg}`)
