@@ -1,0 +1,125 @@
+{
+  "quiz_metadata": {
+    "subject": "Computer Science",
+    "total_questions": 10,
+    "estimated_time_minutes": 15,
+    "difficulty_distribution": {
+      "Easy": 5,
+      "Medium": 3,
+      "Hard": 2
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "difficulty": "Easy",
+      "topic": "Data Structures",
+      "subtopic": "Arrays and Lists",
+      "question": "What is the time complexity of accessing an element in an array by index?",
+      "options": ["O(1)", "O(n)", "O(log n)", "O(n²)"],
+      "correct_answer": "O(1)",
+      "explanation": "Array access by index is constant time O(1) because we can directly calculate the memory address."
+    },
+    {
+      "id": "q2",
+      "type": "multiple_choice",
+      "difficulty": "Easy",
+      "topic": "Data Structures",
+      "subtopic": "Stacks and Queues",
+      "question": "Which data structure follows the LIFO (Last In, First Out) principle?",
+      "options": ["Queue", "Stack", "Array", "Linked List"],
+      "correct_answer": "Stack",
+      "explanation": "A stack follows LIFO where the last element added is the first one to be removed."
+    },
+    {
+      "id": "q3",
+      "type": "true_false",
+      "difficulty": "Easy",
+      "topic": "Algorithms",
+      "subtopic": "Sorting Algorithms",
+      "question": "Bubble sort has a time complexity of O(n²) in the worst case.",
+      "correct_answer": "True",
+      "explanation": "Bubble sort compares adjacent elements and has O(n²) time complexity in worst and average cases."
+    },
+    {
+      "id": "q4",
+      "type": "multiple_choice",
+      "difficulty": "Medium",
+      "topic": "Data Structures",
+      "subtopic": "Trees and Graphs",
+      "question": "In a binary search tree, what is the maximum number of children a node can have?",
+      "options": ["1", "2", "3", "Unlimited"],
+      "correct_answer": "2",
+      "explanation": "A binary tree by definition can have at most 2 children per node (left and right)."
+    },
+    {
+      "id": "q5",
+      "type": "short_answer",
+      "difficulty": "Medium",
+      "topic": "Algorithms",
+      "subtopic": "Search Algorithms",
+      "question": "What is the time complexity of binary search?",
+      "correct_answer": "O(log n)",
+      "explanation": "Binary search eliminates half of the search space in each iteration, resulting in O(log n) complexity."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "difficulty": "Easy",
+      "topic": "Programming Fundamentals",
+      "subtopic": "Variables and Data Types",
+      "question": "Which of the following is NOT a primitive data type in most programming languages?",
+      "options": ["Integer", "String", "Boolean", "Array"],
+      "correct_answer": "Array",
+      "explanation": "Array is a composite/derived data type, not a primitive one."
+    },
+    {
+      "id": "q7",
+      "type": "true_false",
+      "difficulty": "Medium",
+      "topic": "Programming Fundamentals",
+      "subtopic": "Object-Oriented Programming",
+      "question": "Inheritance allows a class to inherit properties and methods from multiple parent classes in all programming languages.",
+      "correct_answer": "False",
+      "explanation": "Multiple inheritance is not supported by all languages. For example, Java supports single inheritance only."
+    },
+    {
+      "id": "q8",
+      "type": "multiple_choice",
+      "difficulty": "Hard",
+      "topic": "Algorithms",
+      "subtopic": "Dynamic Programming",
+      "question": "What is the key principle behind dynamic programming?",
+      "options": [
+        "Divide and conquer",
+        "Greedy approach",
+        "Optimal substructure and overlapping subproblems",
+        "Brute force search"
+      ],
+      "correct_answer": "Optimal substructure and overlapping subproblems",
+      "explanation": "Dynamic programming solves problems by breaking them into overlapping subproblems and storing results to avoid recomputation."
+    },
+    {
+      "id": "q9",
+      "type": "short_answer",
+      "difficulty": "Hard",
+      "topic": "Algorithms",
+      "subtopic": "Graph Algorithms",
+      "question": "Name one algorithm used to find the shortest path between two nodes in a weighted graph.",
+      "correct_answer": "Dijkstra's algorithm",
+      "explanation": "Dijkstra's algorithm is a popular choice for finding shortest paths in weighted graphs with non-negative weights."
+    },
+    {
+      "id": "q10",
+      "type": "multiple_choice",
+      "difficulty": "Easy",
+      "topic": "Programming Fundamentals",
+      "subtopic": "Control Structures",
+      "question": "Which control structure is used to execute a block of code repeatedly?",
+      "options": ["if-else", "switch", "loop", "function"],
+      "correct_answer": "loop",
+      "explanation": "Loops (for, while, do-while) are control structures designed for repetitive execution."
+    }
+  ]
+}

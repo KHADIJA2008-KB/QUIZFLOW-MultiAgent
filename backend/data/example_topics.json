@@ -1,0 +1,75 @@
+{
+  "subject": "Computer Science",
+  "topics": [
+    {
+      "name": "Data Structures",
+      "subtopics": [
+        {
+          "name": "Arrays and Lists",
+          "difficulty": "Easy",
+          "description": "Basic linear data structures for storing elements"
+        },
+        {
+          "name": "Stacks and Queues",
+          "difficulty": "Easy",
+          "description": "LIFO and FIFO data structures"
+        },
+        {
+          "name": "Trees and Graphs",
+          "difficulty": "Medium",
+          "description": "Hierarchical and network data structures"
+        },
+        {
+          "name": "Hash Tables",
+          "difficulty": "Medium",
+          "description": "Key-value mapping with constant-time operations"
+        }
+      ]
+    },
+    {
+      "name": "Algorithms",
+      "subtopics": [
+        {
+          "name": "Sorting Algorithms",
+          "difficulty": "Easy",
+          "description": "Bubble sort, merge sort, quick sort"
+        },
+        {
+          "name": "Search Algorithms",
+          "difficulty": "Easy",
+          "description": "Linear search, binary search"
+        },
+        {
+          "name": "Dynamic Programming",
+          "difficulty": "Hard",
+          "description": "Optimization technique using memoization"
+        },
+        {
+          "name": "Graph Algorithms",
+          "difficulty": "Hard",
+          "description": "BFS, DFS, shortest path algorithms"
+        }
+      ]
+    },
+    {
+      "name": "Programming Fundamentals",
+      "subtopics": [
+        {
+          "name": "Variables and Data Types",
+          "difficulty": "Easy",
+          "description": "Basic programming concepts"
+        },
+        {
+          "name": "Control Structures",
+          "difficulty": "Easy",
+          "description": "Loops, conditionals, functions"
+        },
+        {
+          "name": "Object-Oriented Programming",
+          "difficulty": "Medium",
+          "description": "Classes, inheritance, polymorphism"
+        }
+      ]
+    }
+  ]
+}

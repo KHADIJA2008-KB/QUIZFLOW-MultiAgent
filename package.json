@@ -1,0 +1,19 @@
+{
+  "name": "quizflow-production",
+  "version": "1.0.0",
+  "description": "Production-ready AI-powered quiz platform",
+  "scripts": {
+    "dev": "npm run dev:backend & npm run dev:frontend",
+    "dev:backend": "cd backend && python -m uvicorn src.quizflow.api:app --reload --host 0.0.0.0 --port 8000",
+    "dev:frontend": "cd frontend && npm run dev",
+    "build": "cd frontend && npm run build",
+    "start": "npm run start:backend & npm run start:frontend",
+    "start:backend": "cd backend && python -m uvicorn src.quizflow.api:app --host 0.0.0.0 --port 8000",
+    "start:frontend": "cd frontend && npm run preview",
+    "setup": "npm run setup:backend && npm run setup:frontend",
+    "setup:backend": "cd backend && python -m venv venv && source venv/bin/activate && pip install -e .",
+    "setup:frontend": "cd frontend && npm install"
+  },
+  "keywords": ["quiz", "ai", "education", "crewai"],
+  "license": "MIT"
+}

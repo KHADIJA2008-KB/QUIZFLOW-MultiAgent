@@ -1,0 +1,219 @@
+{
+  "quiz_results": {
+    "user_id": "anonymous",
+    "quiz_id": "Computer Science",
+    "timestamp": "2025-01-01T12:00:00Z",
+    "overall_score": {
+      "points_earned": 13,
+      "total_points": 25,
+      "percentage": 52.0,
+      "grade": "F"
+    },
+    "question_results": [
+      {
+        "question_id": "q1",
+        "user_answer": "Bubble Sort",
+        "correct_answer": "Merge Sort",
+        "is_correct": false,
+        "points_awarded": 0,
+        "feedback": "Incorrect. The correct answer is: Merge Sort"
+      },
+      {
+        "question_id": "q2",
+        "user_answer": "Dynamic sizing",
+        "correct_answer": "Dynamic sizing",
+        "is_correct": true,
+        "points_awarded": 1,
+        "feedback": "Correct! The correct answer is: Dynamic sizing"
+      },
+      {
+        "question_id": "q3",
+        "user_answer": "Array must be unsorted",
+        "correct_answer": "Array must be sorted",
+        "is_correct": false,
+        "points_awarded": 0,
+        "feedback": "Incorrect. The correct answer is: Array must be sorted"
+      },
+      {
+        "question_id": "q4",
+        "user_answer": "O(1)",
+        "correct_answer": "O(n)",
+        "is_correct": false,
+        "points_awarded": 0,
+        "feedback": "Incorrect. The correct answer is: O(n)"
+      },
+      {
+        "question_id": "q5",
+        "user_answer": "True",
+        "correct_answer": "True",
+        "is_correct": true,
+        "points_awarded": 1,
+        "feedback": "Correct! The correct answer is: True"
+      },
+      {
+        "question_id": "q6",
+        "user_answer": "True",
+        "correct_answer": "True",
+        "is_correct": true,
+        "points_awarded": 1,
+        "feedback": "Correct! The correct answer is: True"
+      },
+      {
+        "question_id": "q7",
+        "user_answer": "True",
+        "correct_answer": "True",
+        "is_correct": true,
+        "points_awarded": 1,
+        "feedback": "Correct! The correct answer is: True"
+      },
+      {
+        "question_id": "q8",
+        "user_answer": "a process is a series of steps executed to perform a task \nwhile a thread is a different steps of a process but are connected",
+        "correct_answer": "A process is a program in execution, consisting of its own memory space, while a thread is a smaller unit of a process that can be executed independently and shares the same memory space with other threads in the same process.",
+        "is_correct": true,
+        "points_awarded": 1,
+        "feedback": "Correct! The correct answer is: A process is a program in execution, consisting of its own memory space, while a thread is a smaller unit of a process that can be executed independently and shares the same memory space with other threads in the same process."
+      },
+      {
+        "question_id": "q9",
+        "user_answer": "managing print jobs on a printer\n",
+        "correct_answer": "Queues are used in print spooling systems where print jobs are lined up for processing in the order they are received.",
+        "is_correct": true,
+        "points_awarded": 1,
+        "feedback": "Correct! The correct answer is: Queues are used in print spooling systems where print jobs are lined up for processing in the order they are received."
+      },
+      {
+        "question_id": "q10",
+        "user_answer": "",
+        "correct_answer": "NP-completeness refers to a class of decision problems for which no efficient solution is known, and if a solution can be verified quickly (in polynomial time), it is in 'NP'. If any NP-complete problem can be solved quickly, all problems in NP can also be solved quickly.",
+        "is_correct": false,
+        "points_awarded": 0,
+        "feedback": "Incorrect. The correct answer is: NP-completeness refers to a class of decision problems for which no efficient solution is known, and if a solution can be verified quickly (in polynomial time), it is in 'NP'. If any NP-complete problem can be solved quickly, all problems in NP can also be solved quickly."
+      },
+      {
+        "question_id": "q11",
+        "user_answer": "Compilation",
+        "correct_answer": "Inheritance",
+        "is_correct": false,
+        "points_awarded": 0,
+        "feedback": "Incorrect. The correct answer is: Inheritance"
+      },
+      {
+        "question_id": "q12",
+        "user_answer": "To encrypt data",
+        "correct_answer": "To monitor and analyze network traffic",
+        "is_correct": false,
+        "points_awarded": 0,
+        "feedback": "Incorrect. The correct answer is: To monitor and analyze network traffic"
+      },
+      {
+        "question_id": "q13",
+        "user_answer": "Data is always consistent",
+        "correct_answer": "Data is saved permanently after a transaction commits",
+        "is_correct": false,
+        "points_awarded": 0,
+        "feedback": "Incorrect. The correct answer is: Data is saved permanently after a transaction commits"
+      },
+      {
+        "question_id": "q14",
+        "user_answer": "Finding the maximum of a list",
+        "correct_answer": "Traveling Salesman Problem",
+        "is_correct": false,
+        "points_awarded": 0,
+        "feedback": "Incorrect. The correct answer is: Traveling Salesman Problem"
+      },
+      {
+        "question_id": "q15",
+        "user_answer": "True",
+        "correct_answer": "False",
+        "is_correct": false,
+        "points_awarded": 0,
+        "feedback": "Incorrect. The correct answer is: False"
+      },
+      {
+        "question_id": "q16",
+        "user_answer": "True",
+        "correct_answer": "True",
+        "is_correct": true,
+        "points_awarded": 1,
+        "feedback": "Correct! The correct answer is: True"
+      },
+      {
+        "question_id": "q17",
+        "user_answer": "True",
+        "correct_answer": "True",
+        "is_correct": true,
+        "points_awarded": 1,
+        "feedback": "Correct! The correct answer is: True"
+      },
+      {
+        "question_id": "q18",
+        "user_answer": "adding up attributes or features to the dataset\n",
+        "correct_answer": "Feature scaling is the method of normalizing or standardizing the range of independent variables or features of data, to improve the performance of machine learning algorithms.",
+        "is_correct": true,
+        "points_awarded": 1,
+        "feedback": "Correct! The correct answer is: Feature scaling is the method of normalizing or standardizing the range of independent variables or features of data, to improve the performance of machine learning algorithms."
+      },
+      {
+        "question_id": "q19",
+        "user_answer": "repitative testing is also known as penetration testing or ",
+        "correct_answer": "Penetration testing is a simulated cyber attack on a computer system or network to evaluate its security and identify vulnerabilities.",
+        "is_correct": true,
+        "points_awarded": 1,
+        "feedback": "Correct! The correct answer is: Penetration testing is a simulated cyber attack on a computer system or network to evaluate its security and identify vulnerabilities."
+      },
+      {
+        "question_id": "q20",
+        "user_answer": "there are no ordering rules for buinary tree but all nodes are ordered in a binary search tree\n",
+        "correct_answer": "A binary tree can have any arrangement of nodes, while a binary search tree has specific ordering properties, where for any given node, all values in the left subtree are less, and all values in the right subtree are greater.",
+        "is_correct": true,
+        "points_awarded": 1,
+        "feedback": "Correct! The correct answer is: A binary tree can have any arrangement of nodes, while a binary search tree has specific ordering properties, where for any given node, all values in the left subtree are less, and all values in the right subtree are greater."
+      },
+      {
+        "question_id": "q21",
+        "user_answer": "To allow efficient use of memory",
+        "correct_answer": "To allow efficient use of memory",
+        "is_correct": true,
+        "points_awarded": 1,
+        "feedback": "Correct! The correct answer is: To allow efficient use of memory"
+      },
+      {
+        "question_id": "q22",
+        "user_answer": "Breadth-First Search",
+        "correct_answer": "Dijkstra's Algorithm",
+        "is_correct": false,
+        "points_awarded": 0,
+        "feedback": "Incorrect. The correct answer is: Dijkstra's Algorithm"
+      },
+      {
+        "question_id": "q23",
+        "user_answer": "O(log n)",
+        "correct_answer": "O(n)",
+        "is_correct": false,
+        "points_awarded": 0,
+        "feedback": "Incorrect. The correct answer is: O(n)"
+      },
+      {
+        "question_id": "q24",
+        "user_answer": "False",
+        "correct_answer": "True",
+        "is_correct": false,
+        "points_awarded": 0,
+        "feedback": "Incorrect. The correct answer is: True"
+      },
+      {
+        "question_id": "q25",
+        "user_answer": "none\n",
+        "correct_answer": "Functional dependencies are a relationship that exists when one attribute uniquely determines another attribute, crucial for determining the normalization level of a database.",
+        "is_correct": true,
+        "points_awarded": 1,
+        "feedback": "Correct! The correct answer is: Functional dependencies are a relationship that exists when one attribute uniquely determines another attribute, crucial for determining the normalization level of a database."
+      }
+    ],
+    "recommendations": [
+      "You scored 52.0%. Keep practicing to improve!",
+      "Review the questions you got wrong and study those topics more."
+    ]
+  }
+}

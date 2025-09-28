@@ -1,0 +1,165 @@
+{
+  "subject": "Computer Science",
+  "topics": [
+    {
+      "name": "Algorithms",
+      "subtopics": [
+        {
+          "name": "Sorting Algorithms",
+          "difficulty": "Easy",
+          "description": "Covers basic sorting algorithms such as Bubble Sort, Selection Sort, and Insertion Sort, including their operational principles and applications."
+        },
+        {
+          "name": "Searching Algorithms",
+          "difficulty": "Medium",
+          "description": "Explores searching techniques like Linear Search and Binary Search with their use cases and time complexity analysis."
+        },
+        {
+          "name": "Graph Algorithms",
+          "difficulty": "Hard",
+          "description": "Involves complex algorithms such as Dijkstra's and A* for pathfinding and navigating graphs, including real-world applications in networking and AI."
+        }
+      ]
+    },
+    {
+      "name": "Data Structures",
+      "subtopics": [
+        {
+          "name": "Arrays and Linked Lists",
+          "difficulty": "Easy",
+          "description": "Introduction to fundamental data structures including arrays and singly/doubly linked lists, their operations, advantages, and disadvantages."
+        },
+        {
+          "name": "Stacks and Queues",
+          "difficulty": "Medium",
+          "description": "Study of stack and queue data structures, their implementations, and applications in programming."
+        },
+        {
+          "name": "Trees and Graphs",
+          "difficulty": "Hard",
+          "description": "Explains binary trees, binary search trees, AVL trees, and graph theory fundamentals, including traversals and applications in databases."
+        }
+      ]
+    },
+    {
+      "name": "Programming Concepts",
+      "subtopics": [
+        {
+          "name": "Object-Oriented Programming",
+          "difficulty": "Medium",
+          "description": "Covers core principles of OOP including classes, objects, inheritance, and polymorphism in programming contexts."
+        },
+        {
+          "name": "Functional Programming",
+          "difficulty": "Hard",
+          "description": "Explores the fundamentals of functional programming paradigms, higher-order functions, and immutability considerations in software design."
+        },
+        {
+          "name": "Concurrency in Programming",
+          "difficulty": "Medium",
+          "description": "Discusses the principles of concurrency, including threading, parallelism, and synchronization in various programming languages."
+        }
+      ]
+    },
+    {
+      "name": "Complexity Analysis",
+      "subtopics": [
+        {
+          "name": "Big O Notation",
+          "difficulty": "Easy",
+          "description": "An introduction to time and space complexity measuring techniques using Big O notation, focusing on basic comprehension."
+        },
+        {
+          "name": "Comparative Analysis",
+          "difficulty": "Medium",
+          "description": "Investigates the efficiency of algorithms through comparative analysis and case studies in the context of performance implications."
+        },
+        {
+          "name": "NP-Completeness",
+          "difficulty": "Hard",
+          "description": "An advanced examination of NP-complete problems, their characteristics, and implications on computational theory."
+        }
+      ]
+    },
+    {
+      "name": "Machine Learning Basics",
+      "subtopics": [
+        {
+          "name": "Introduction to ML",
+          "difficulty": "Easy",
+          "description": "Covers fundamental concepts of machine learning including supervised and unsupervised learning, with practical applications in real-world scenarios."
+        },
+        {
+          "name": "Feature Engineering",
+          "difficulty": "Medium",
+          "description": "Focuses on methods to process and extract meaningful data features suitable for machine learning models."
+        },
+        {
+          "name": "Overfitting and Underfitting",
+          "difficulty": "Hard",
+          "description": "Discusses the concepts of model generalization, overfitting, and underfitting, including prevention techniques in training models."
+        }
+      ]
+    },
+    {
+      "name": "Network Security",
+      "subtopics": [
+        {
+          "name": "Firewalls and VPNs",
+          "difficulty": "Easy",
+          "description": "Introductory knowledge on firewalls and VPNs, their purposes, and basic configuration scenarios."
+        },
+        {
+          "name": "Intrusion Detection Systems",
+          "difficulty": "Medium",
+          "description": "Understanding of various intrusion detection systems (IDS), their functioning and the methodologies behind them."
+        },
+        {
+          "name": "Security Protocols",
+          "difficulty": "Hard",
+          "description": "In-depth analysis of security protocols such as SSL/TLS, their mechanisms, and applications in secure communications."
+        }
+      ]
+    },
+    {
+      "name": "Operating Systems",
+      "subtopics": [
+        {
+          "name": "Process Management",
+          "difficulty": "Easy",
+          "description": "Introduction to process lifecycle, scheduling algorithms, and multithreading concepts in operating systems."
+        },
+        {
+          "name": "Memory Management",
+          "difficulty": "Medium",
+          "description": "Covers concepts of memory allocation, paging, segmentation, and garbage collection techniques."
+        },
+        {
+          "name": "File Systems",
+          "difficulty": "Hard",
+          "description": "Explores advanced file system principles, including file organization, storage allocation, and filesystem types."
+        }
+      ]
+    },
+    {
+      "name": "Database Management",
+      "subtopics": [
+        {
+          "name": "SQL Basics",
+          "difficulty": "Easy",
+          "description": "Introductory tutorial on SQL queries, CRUD operations, and relational database fundamentals."
+        },
+        {
+          "name": "Normalization",
+          "difficulty": "Medium",
+          "description": "Study of database normalization forms, their benefits, and the impact of normalization on database design."
+        },
+        {
+          "name": "Transactions and ACID Properties",
+          "difficulty": "Hard",
+          "description": "Advanced exploration of database transactions, ACID properties, and their importance to data integrity and concurrency."
+        }
+      ]
+    }
+  ]
+}

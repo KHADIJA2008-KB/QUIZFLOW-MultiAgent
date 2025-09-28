@@ -1,0 +1,149 @@
+plan_topics_task:
+  description: >
+    Analyze the subject '{subject}' and create a comprehensive topic breakdown for quiz generation.
+    Create 6-8 main topics, each with 3-5 subtopics. Assign difficulty levels (Easy/Medium/Hard) 
+    to each subtopic based on complexity and typical learning progression.
+    
+    Consider these subjects and their typical coverage:
+    - Computer Science: Algorithms, Data Structures, Programming Concepts, Complexity Analysis
+    - AI/ML: Machine Learning Basics, Neural Networks, Deep Learning, NLP, Computer Vision
+    - Cybersecurity: Network Security, Cryptography, Threat Analysis, Incident Response
+    - Cloud Computing: AWS/Azure/GCP, Containers, Microservices, DevOps
+    - Programming: Language-specific concepts, Design Patterns, Best Practices
+    - Operating Systems: Process Management, Memory Management, File Systems
+    - Database Management: SQL, NoSQL, Database Design, Transactions
+    - Networks: OSI Model, Protocols, Network Security, Troubleshooting
+    - Software Engineering: SDLC, Testing, Architecture, Project Management
+  expected_output: >
+    A structured JSON object with the following format:
+    {
+      "subject": "subject_name",
+      "topics": [
+        {
+          "name": "Topic Name",
+          "subtopics": [
+            {
+              "name": "Subtopic Name", 
+              "difficulty": "Easy|Medium|Hard",
+              "description": "Brief description of what this subtopic covers"
+            }
+          ]
+        }
+      ]
+    }
+  agent: quiz_topic_planner
+  output_file: "data/topics.json"
+
+generate_quiz_task:
+  description: >
+    Generate a comprehensive quiz based on the topics from the previous task. Create 20-25 questions 
+    distributed across the identified topics and subtopics. Include a mix of question types:
+    
+    - Multiple Choice Questions (60%): 4-5 options each, with clear correct answers and plausible distractors
+    - True/False Questions (25%): Clear statements that are definitively true or false
+    - Short Answer Questions (15%): Questions requiring 1-3 sentence responses
+    
+    Ensure questions are:
+    - Clearly worded and unambiguous
+    - Appropriately challenging for their difficulty level
+    - Cover both theoretical concepts and practical applications
+    - Include variety in cognitive levels (recall, understanding, application, analysis)
+    
+    For each question, provide:
+    - Question text
+    - Question type
+    - Difficulty level
+    - Topic and subtopic
+    - Options (for MCQ)
+    - Correct answer
+    - Brief explanation (optional but preferred)
+  expected_output: >
+    A structured JSON object with quiz questions:
+    {
+      "quiz_metadata": {
+        "subject": "subject_name",
+        "total_questions": number,
+        "estimated_time_minutes": number,
+        "difficulty_distribution": {"Easy": count, "Medium": count, "Hard": count}
+      },
+      "questions": [
+        {
+          "id": "unique_id",
+          "type": "multiple_choice|true_false|short_answer",
+          "difficulty": "Easy|Medium|Hard",
+          "topic": "main_topic",
+          "subtopic": "specific_subtopic",
+          "question": "Question text",
+          "options": ["option1", "option2", "option3", "option4"] (for MCQ only),
+          "correct_answer": "correct answer",
+          "explanation": "Why this is the correct answer (optional)"
+        }
+      ]
+    }
+  agent: quiz_maker
+  output_file: "data/quiz.json"
+  context: [plan_topics_task]
+
+evaluate_quiz_task:
+  description: >
+    You will receive user answers to the quiz questions and need to evaluate them comprehensively.
+    The user answers will be provided in the context or as input parameters.
+    
+    For each question:
+    1. Compare the user's answer with the correct answer
+    2. For multiple choice and true/false: exact match required
+    3. For short answers: use semantic understanding to evaluate correctness
+    4. Assign points: Full credit (1 point), Partial credit (0.5 points), or No credit (0 points)
+    5. Provide constructive feedback explaining why the answer is correct/incorrect
+    
+    Generate comprehensive results including:
+    - Overall score and percentage
+    - Performance by topic and difficulty level
+    - Detailed feedback for each question
+    - Areas for improvement
+    - Suggestions for further study
+  expected_output: >
+    A detailed results JSON object:
+    {
+      "quiz_results": {
+        "user_id": "user_identifier",
+        "quiz_id": "quiz_identifier", 
+        "timestamp": "ISO_datetime",
+        "overall_score": {
+          "points_earned": number,
+          "total_points": number,
+          "percentage": number,
+          "grade": "A|B|C|D|F"
+        },
+        "performance_by_topic": [
+          {
+            "topic": "topic_name",
+            "questions_answered": number,
+            "correct_answers": number,
+            "percentage": number
+          }
+        ],
+        "performance_by_difficulty": {
+          "Easy": {"correct": number, "total": number},
+          "Medium": {"correct": number, "total": number}, 
+          "Hard": {"correct": number, "total": number}
+        },
+        "question_results": [
+          {
+            "question_id": "id",
+            "user_answer": "user's answer",
+            "correct_answer": "correct answer",
+            "is_correct": boolean,
+            "points_awarded": number,
+            "feedback": "Explanation of correctness and learning guidance"
+          }
+        ],
+        "recommendations": [
+          "Study suggestion 1",
+          "Study suggestion 2"
+        ]
+      }
+    }
+  agent: quiz_checker
+  output_file: "data/results.json"
+  context: [generate_quiz_task]

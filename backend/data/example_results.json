@@ -1,0 +1,126 @@
+{
+  "quiz_results": {
+    "user_id": "user123",
+    "quiz_id": "cs_quiz_001",
+    "timestamp": "2025-01-01T12:30:00Z",
+    "overall_score": {
+      "points_earned": 8,
+      "total_points": 10,
+      "percentage": 80.0,
+      "grade": "B"
+    },
+    "performance_by_topic": [
+      {
+        "topic": "Data Structures",
+        "questions_answered": 4,
+        "correct_answers": 3,
+        "percentage": 75.0
+      },
+      {
+        "topic": "Algorithms",
+        "questions_answered": 4,
+        "correct_answers": 3,
+        "percentage": 75.0
+      },
+      {
+        "topic": "Programming Fundamentals",
+        "questions_answered": 2,
+        "correct_answers": 2,
+        "percentage": 100.0
+      }
+    ],
+    "performance_by_difficulty": {
+      "Easy": {"correct": 4, "total": 5},
+      "Medium": {"correct": 2, "total": 3},
+      "Hard": {"correct": 2, "total": 2}
+    },
+    "question_results": [
+      {
+        "question_id": "q1",
+        "user_answer": "O(1)",
+        "correct_answer": "O(1)",
+        "is_correct": true,
+        "points_awarded": 1,
+        "feedback": "Correct! Array access by index is constant time O(1)."
+      },
+      {
+        "question_id": "q2",
+        "user_answer": "Stack",
+        "correct_answer": "Stack",
+        "is_correct": true,
+        "points_awarded": 1,
+        "feedback": "Correct! Stack follows LIFO principle."
+      },
+      {
+        "question_id": "q3",
+        "user_answer": "True",
+        "correct_answer": "True",
+        "is_correct": true,
+        "points_awarded": 1,
+        "feedback": "Correct! Bubble sort has O(n²) worst-case complexity."
+      },
+      {
+        "question_id": "q4",
+        "user_answer": "3",
+        "correct_answer": "2",
+        "is_correct": false,
+        "points_awarded": 0,
+        "feedback": "Incorrect. A binary tree node can have at most 2 children (left and right)."
+      },
+      {
+        "question_id": "q5",
+        "user_answer": "O(log n)",
+        "correct_answer": "O(log n)",
+        "is_correct": true,
+        "points_awarded": 1,
+        "feedback": "Correct! Binary search has O(log n) time complexity."
+      },
+      {
+        "question_id": "q6",
+        "user_answer": "Array",
+        "correct_answer": "Array",
+        "is_correct": true,
+        "points_awarded": 1,
+        "feedback": "Correct! Array is a composite data type, not primitive."
+      },
+      {
+        "question_id": "q7",
+        "user_answer": "True",
+        "correct_answer": "False",
+        "is_correct": false,
+        "points_awarded": 0,
+        "feedback": "Incorrect. Not all languages support multiple inheritance (e.g., Java only supports single inheritance)."
+      },
+      {
+        "question_id": "q8",
+        "user_answer": "Optimal substructure and overlapping subproblems",
+        "correct_answer": "Optimal substructure and overlapping subproblems",
+        "is_correct": true,
+        "points_awarded": 1,
+        "feedback": "Correct! Dynamic programming relies on optimal substructure and overlapping subproblems."
+      },
+      {
+        "question_id": "q9",
+        "user_answer": "Dijkstra",
+        "correct_answer": "Dijkstra's algorithm",
+        "is_correct": true,
+        "points_awarded": 1,
+        "feedback": "Correct! Dijkstra's algorithm finds shortest paths in weighted graphs."
+      },
+      {
+        "question_id": "q10",
+        "user_answer": "loop",
+        "correct_answer": "loop",
+        "is_correct": true,
+        "points_awarded": 1,
+        "feedback": "Correct! Loops are used for repetitive execution."
+      }
+    ],
+    "recommendations": [
+      "Great job! You scored 80% overall.",
+      "Review binary tree concepts - you missed the question about maximum children in BST.",
+      "Study multiple inheritance concepts in different programming languages.",
+      "Continue practicing data structures and algorithms - you're doing well!"
+    ]
+  }
+}
