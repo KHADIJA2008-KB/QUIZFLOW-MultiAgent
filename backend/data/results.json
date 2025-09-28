@@ -1,219 +1,263 @@
+```json
 {
   "quiz_results": {
-    "user_id": "test_user",
-    "quiz_id": "unknown",
-    "timestamp": "2025-01-01T12:00:00Z",
+    "user_id": "user_identifier",
+    "quiz_id": "quiz_identifier",
+    "timestamp": "2023-10-10T15:00:00Z",
     "overall_score": {
-      "points_earned": 0,
+      "points_earned": 16,
       "total_points": 25,
-      "percentage": 0.0,
-      "grade": "F"
+      "percentage": 64,
+      "grade": "C"
+    },
+    "performance_by_topic": [
+      {
+        "topic": "Introduction to AI and ML",
+        "questions_answered": 5,
+        "correct_answers": 3,
+        "percentage": 60
+      },
+      {
+        "topic": "Machine Learning Fundamentals",
+        "questions_answered": 6,
+        "correct_answers": 4,
+        "percentage": 67
+      },
+      {
+        "topic": "Neural Networks",
+        "questions_answered": 5,
+        "correct_answers": 3,
+        "percentage": 60
+      },
+      {
+        "topic": "Deep Learning",
+        "questions_answered": 5,
+        "correct_answers": 1,
+        "percentage": 20
+      },
+      {
+        "topic": "Natural Language Processing (NLP)",
+        "questions_answered": 4,
+        "correct_answers": 3,
+        "percentage": 75
+      },
+      {
+        "topic": "Computer Vision",
+        "questions_answered": 4,
+        "correct_answers": 2,
+        "percentage": 50
+      },
+      {
+        "topic": "Ethics in AI",
+        "questions_answered": 4,
+        "correct_answers": 2,
+        "percentage": 50
+      }
+    ],
+    "performance_by_difficulty": {
+      "Easy": {"correct": 3, "total": 6},
+      "Medium": {"correct": 7, "total": 10},
+      "Hard": {"correct": 6, "total": 9}
     },
     "question_results": [
       {
-        "question_id": "q1",
-        "user_answer": "",
-        "correct_answer": "var x = 10;",
-        "is_correct": false,
-        "points_awarded": 0,
-        "feedback": "Incorrect. The correct answer is: var x = 10;"
+        "question_id": "1",
+        "user_answer": "Computer systems that perform tasks requiring human intelligence",
+        "correct_answer": "Computer systems that perform tasks requiring human intelligence",
+        "is_correct": true,
+        "points_awarded": 1,
+        "feedback": "Correct! You understand the concept of AI thoroughly."
       },
       {
-        "question_id": "q2",
-        "user_answer": "",
-        "correct_answer": "11",
-        "is_correct": false,
-        "points_awarded": 0,
-        "feedback": "Incorrect. The correct answer is: 11"
+        "question_id": "2",
+        "user_answer": "The creation of the Turing Test by Alan Turing",
+        "correct_answer": "The creation of the Turing Test by Alan Turing",
+        "is_correct": true,
+        "points_awarded": 1,
+        "feedback": "Correct! This is indeed a significant milestone in AI history."
       },
       {
-        "question_id": "q3",
-        "user_answer": "",
+        "question_id": "3",
+        "user_answer": "True",
+        "correct_answer": "True",
+        "is_correct": true,
+        "points_awarded": 1,
+        "feedback": "Correct! You accurately identified that supervised learning needs labeled data."
+      },
+      {
+        "question_id": "4",
+        "user_answer": "Algorithm Optimization",
+        "correct_answer": "Algorithm Optimization",
+        "is_correct": true,
+        "points_awarded": 1,
+        "feedback": "Correct! This technique is not part of data preprocessing."
+      },
+      {
+        "question_id": "5",
+        "user_answer": "Mean squared error",
+        "correct_answer": "Accuracy",
+        "is_correct": false,
+        "points_awarded": 0,
+        "feedback": "Incorrect. The most commonly used metric for classification models is Accuracy."
+      },
+      {
+        "question_id": "6",
+        "user_answer": "True",
         "correct_answer": "False",
         "is_correct": false,
         "points_awarded": 0,
-        "feedback": "Incorrect. The correct answer is: False"
+        "feedback": "Incorrect. Underfitting refers to a model that is too simple, while this statement is about overfitting."
       },
       {
-        "question_id": "q4",
-        "user_answer": "",
-        "correct_answer": "if statement",
+        "question_id": "7",
+        "user_answer": "Optimization",
+        "correct_answer": "To introduce non-linearity",
         "is_correct": false,
         "points_awarded": 0,
-        "feedback": "Incorrect. The correct answer is: if statement"
+        "feedback": "Incorrect. The activation function primarily introduces non-linearity into the neural network."
       },
       {
-        "question_id": "q5",
-        "user_answer": "",
-        "correct_answer": "function myFunction() {}",
-        "is_correct": false,
-        "points_awarded": 0,
-        "feedback": "Incorrect. The correct answer is: function myFunction() {}"
+        "question_id": "8",
+        "user_answer": "Gradient Descent",
+        "correct_answer": "Gradient Descent",
+        "is_correct": true,
+        "points_awarded": 1,
+        "feedback": "Correct! Gradient Descent is indeed primarily used to train neural networks."
       },
       {
-        "question_id": "q6",
-        "user_answer": "",
-        "correct_answer": "x => x * 2",
-        "is_correct": false,
-        "points_awarded": 0,
-        "feedback": "Incorrect. The correct answer is: x => x * 2"
-      },
-      {
-        "question_id": "q7",
-        "user_answer": "",
+        "question_id": "9",
+        "user_answer": "True",
         "correct_answer": "True",
-        "is_correct": false,
-        "points_awarded": 0,
-        "feedback": "Incorrect. The correct answer is: True"
+        "is_correct": true,
+        "points_awarded": 1,
+        "feedback": "Correct! Convolutional Neural Networks are essential for image processing."
       },
       {
-        "question_id": "q8",
-        "user_answer": "",
-        "correct_answer": "A mechanism for inheritance in JavaScript",
-        "is_correct": false,
-        "points_awarded": 0,
-        "feedback": "Incorrect. The correct answer is: A mechanism for inheritance in JavaScript"
+        "question_id": "10",
+        "user_answer": "TensorFlow",
+        "correct_answer": "TensorFlow",
+        "is_correct": true,
+        "points_awarded": 1,
+        "feedback": "Correct! TensorFlow is a widely recognized deep learning framework."
       },
       {
-        "question_id": "q9",
-        "user_answer": "",
-        "correct_answer": "True",
-        "is_correct": false,
-        "points_awarded": 0,
-        "feedback": "Incorrect. The correct answer is: True"
+        "question_id": "11",
+        "user_answer": "Tokenization",
+        "correct_answer": "Tokenization",
+        "is_correct": true,
+        "points_awarded": 1,
+        "feedback": "Correct! Tokenization is indeed the process of breaking down text into tokens."
       },
       {
-        "question_id": "q10",
-        "user_answer": "",
-        "correct_answer": "A Promise is an object that represents the eventual completion or failure of an asynchronous operation and its resulting value.",
-        "is_correct": false,
-        "points_awarded": 0,
-        "feedback": "Incorrect. The correct answer is: A Promise is an object that represents the eventual completion or failure of an asynchronous operation and its resulting value."
-      },
-      {
-        "question_id": "q11",
-        "user_answer": "",
-        "correct_answer": "The async/await syntax allows developers to write asynchronous code in a more synchronous style, making it easier to read and maintain.",
-        "is_correct": false,
-        "points_awarded": 0,
-        "feedback": "Incorrect. The correct answer is: The async/await syntax allows developers to write asynchronous code in a more synchronous style, making it easier to read and maintain."
-      },
-      {
-        "question_id": "q12",
-        "user_answer": "",
-        "correct_answer": "document.getElementById()",
-        "is_correct": false,
-        "points_awarded": 0,
-        "feedback": "Incorrect. The correct answer is: document.getElementById()"
-      },
-      {
-        "question_id": "q13",
-        "user_answer": "",
-        "correct_answer": "True",
-        "is_correct": false,
-        "points_awarded": 0,
-        "feedback": "Incorrect. The correct answer is: True"
-      },
-      {
-        "question_id": "q14",
-        "user_answer": "",
-        "correct_answer": "element.remove()",
-        "is_correct": false,
-        "points_awarded": 0,
-        "feedback": "Incorrect. The correct answer is: element.remove()"
-      },
-      {
-        "question_id": "q15",
-        "user_answer": "",
-        "correct_answer": "A closure is a function that retains access to its lexical scope, even when the function is executed outside that scope.",
-        "is_correct": false,
-        "points_awarded": 0,
-        "feedback": "Incorrect. The correct answer is: A closure is a function that retains access to its lexical scope, even when the function is executed outside that scope."
-      },
-      {
-        "question_id": "q16",
-        "user_answer": "",
-        "correct_answer": "To encapsulate code for reuse",
-        "is_correct": false,
-        "points_awarded": 0,
-        "feedback": "Incorrect. The correct answer is: To encapsulate code for reuse"
-      },
-      {
-        "question_id": "q17",
-        "user_answer": "",
-        "correct_answer": "True",
-        "is_correct": false,
-        "points_awarded": 0,
-        "feedback": "Incorrect. The correct answer is: True"
-      },
-      {
-        "question_id": "q18",
-        "user_answer": "",
-        "correct_answer": "To manage asynchronous operations",
-        "is_correct": false,
-        "points_awarded": 0,
-        "feedback": "Incorrect. The correct answer is: To manage asynchronous operations"
-      },
-      {
-        "question_id": "q19",
-        "user_answer": "",
-        "correct_answer": "The finally block executes after the try and catch blocks, regardless of whether an exception was thrown.",
-        "is_correct": false,
-        "points_awarded": 0,
-        "feedback": "Incorrect. The correct answer is: The finally block executes after the try and catch blocks, regardless of whether an exception was thrown."
-      },
-      {
-        "question_id": "q20",
-        "user_answer": "",
-        "correct_answer": "The === operator checks for both value and type equality, while == checks for value equality only, performing type coercion if necessary.",
-        "is_correct": false,
-        "points_awarded": 0,
-        "feedback": "Incorrect. The correct answer is: The === operator checks for both value and type equality, while == checks for value equality only, performing type coercion if necessary."
-      },
-      {
-        "question_id": "q21",
-        "user_answer": "",
-        "correct_answer": "Named functions can be invoked before their declaration.",
-        "is_correct": false,
-        "points_awarded": 0,
-        "feedback": "Incorrect. The correct answer is: Named functions can be invoked before their declaration."
-      },
-      {
-        "question_id": "q22",
-        "user_answer": "",
-        "correct_answer": "class MyClass {}",
-        "is_correct": false,
-        "points_awarded": 0,
-        "feedback": "Incorrect. The correct answer is: class MyClass {}"
-      },
-      {
-        "question_id": "q23",
-        "user_answer": "",
-        "correct_answer": "True",
-        "is_correct": false,
-        "points_awarded": 0,
-        "feedback": "Incorrect. The correct answer is: True"
-      },
-      {
-        "question_id": "q24",
-        "user_answer": "",
+        "question_id": "12",
+        "user_answer": "False",
         "correct_answer": "False",
-        "is_correct": false,
-        "points_awarded": 0,
-        "feedback": "Incorrect. The correct answer is: False"
+        "is_correct": true,
+        "points_awarded": 1,
+        "feedback": "Correct! Sentiment analysis can categorize sentiments beyond just positive and negative."
       },
       {
-        "question_id": "q25",
-        "user_answer": "",
-        "correct_answer": "The three states of a Promise are pending, fulfilled, and rejected.",
+        "question_id": "13",
+        "user_answer": "Histogram Equalization",
+        "correct_answer": "Histogram Equalization",
+        "is_correct": true,
+        "points_awarded": 1,
+        "feedback": "Correct! This technique enhances image brightness and contrast."
+      },
+      {
+        "question_id": "14",
+        "user_answer": "True",
+        "correct_answer": "True",
+        "is_correct": true,
+        "points_awarded": 1,
+        "feedback": "Correct! Object detection does indeed find the location of objects."
+      },
+      {
+        "question_id": "15",
+        "user_answer": "Bias in AI can lead to unfair outcomes.",
+        "correct_answer": "Bias in AI can lead to unfair outcomes and reinforce societal inequalities.",
+        "is_correct": false,
+        "points_awarded": 0.5,
+        "feedback": "Partially correct. You noted the unfair outcomes, but did not mention the systemic inequalities."
+      },
+      {
+        "question_id": "16",
+        "user_answer": "GDPR",
+        "correct_answer": "GDPR",
+        "is_correct": true,
+        "points_awarded": 1,
+        "feedback": "Correct! The GDPR is crucial for data privacy in the EU."
+      },
+      {
+        "question_id": "17",
+        "user_answer": "Automation of jobs.",
+        "correct_answer": "One potential impact is job displacement in various industries as AI systems automate tasks traditionally performed by humans.",
         "is_correct": false,
         "points_awarded": 0,
-        "feedback": "Incorrect. The correct answer is: The three states of a Promise are pending, fulfilled, and rejected."
+        "feedback": "Incorrect. Your answer lacked specificity related to job displacement."
+      },
+      {
+        "question_id": "18",
+        "user_answer": "Overfitting happens.",
+        "correct_answer": "Overfitting occurs when a model learns too much from training data.",
+        "is_correct": false,
+        "points_awarded": 0,
+        "feedback": "Incorrect. Your response needs more details about learning noise."
+      },
+      {
+        "question_id": "19",
+        "user_answer": "Transfer learning.",
+        "correct_answer": "To improve performance by applying knowledge from one task to a different but related task.",
+        "is_correct": false,
+        "points_awarded": 0,
+        "feedback": "Incorrect. While related to transfer learning, your answer needs clarity on how it's applied."
+      },
+      {
+        "question_id": "20",
+        "user_answer": "Speech recognition.",
+        "correct_answer": "Speech recognition",
+        "is_correct": false,
+        "points_awarded": 0,
+        "feedback": "Incorrect. Speech recognition is not an application of computer vision."
+      },
+      {
+        "question_id": "21",
+        "user_answer": "A statistical language model.",
+        "correct_answer": "A statistical language model that predicts the next item in a sequence based on the previous N items.",
+        "is_correct": false,
+        "points_awarded": 0,
+        "feedback": "Incorrect. Your answer lacked detail on how N-grams function."
+      },
+      {
+        "question_id": "22",
+        "user_answer": "True",
+        "correct_answer": "True",
+        "is_correct": true,
+        "points_awarded": 1,
+        "feedback": "Correct! Deep learning has widespread applications in crucial fields."
+      },
+      {
+        "question_id": "23",
+        "user_answer": "False.",
+        "correct_answer": "False",
+        "is_correct": true,
+        "points_awarded": 1,
+        "feedback": "Correct! AI systems often require human input to function effectively."
+      },
+      {
+        "question_id": "24",
+        "user_answer": "Diverse datasets.",
+        "correct_answer": "One way to mitigate bias is to ensure diverse and representative datasets.",
+        "is_correct": false,
+        "points_awarded": 0,
+        "feedback": "Incorrect. Your answer needs more detail and specificity regarding dataset representation."
       }
     ],
     "recommendations": [
-      "You scored 0.0%. Keep practicing to improve!",
-      "Review the questions you got wrong and study those topics more."
+      "Review the concepts of model evaluation metrics, especially precision and accuracy.",
+      "Explore the implications of bias in AI and ways to mitigate it.",
+      "Engage with practical examples of transfer learning to solidify your understanding in this area."
     ]
   }
 }
+```

@@ -1,164 +1,144 @@
 ```json
 {
-  "subject": "JavaScript Programming",
+  "subject": "Artificial Intelligence & Machine Learning",
   "topics": [
     {
-      "name": "Basic Syntax and Data Types",
+      "name": "Introduction to AI and ML",
       "subtopics": [
         {
-          "name": "Variables and Data Types",
+          "name": "Definition of AI",
           "difficulty": "Easy",
-          "description": "Covers the declaration and use of variables, including primitive data types such as strings, numbers, booleans, null, and undefined."
+          "description": "Understanding what Artificial Intelligence is and its significance."
         },
         {
-          "name": "Operators",
-          "difficulty": "Easy",
-          "description": "Explores different types of operators in JavaScript including arithmetic, comparison, and logical operators."
-        },
-        {
-          "name": "Control Structures",
+          "name": "History of AI",
           "difficulty": "Medium",
-          "description": "Focuses on control flow constructs like if-else statements, switch cases, loops (for, while), and their usage."
+          "description": "Overview of key milestones in the development of AI technologies."
+        },
+        {
+          "name": "Types of Machine Learning",
+          "difficulty": "Medium",
+          "description": "Exploration of supervised, unsupervised, and reinforcement learning types."
         }
       ]
     },
     {
-      "name": "Functions",
+      "name": "Machine Learning Fundamentals",
       "subtopics": [
         {
-          "name": "Function Declaration and Invocation",
-          "difficulty": "Easy",
-          "description": "Introduces how to declare and invoke functions in JavaScript, including function expressions."
-        },
-        {
-          "name": "Anonymous Functions and Arrow Functions",
+          "name": "Data Preprocessing",
           "difficulty": "Medium",
-          "description": "Discusses anonymous functions and introduces the syntax and advantages of arrow functions."
+          "description": "Techniques used to clean and prepare data for modeling."
         },
         {
-          "name": "Higher-Order Functions",
-          "difficulty": "Hard",
-          "description": "Explains concepts of higher-order functions that accept other functions as arguments or return functions."
+          "name": "Model Evaluation Metrics",
+          "difficulty": "Medium",
+          "description": "Metrics such as accuracy, precision, recall, and F1 score used to evaluate model performance."
+        },
+        {
+          "name": "Overfitting vs. Underfitting",
+          "difficulty": "Medium",
+          "description": "Understanding the concepts of overfitting and underfitting in model training."
         }
       ]
     },
     {
-      "name": "Object-Oriented Programming",
+      "name": "Neural Networks",
       "subtopics": [
         {
-          "name": "Objects and Properties",
+          "name": "Basic Architecture of Neural Networks",
           "difficulty": "Medium",
-          "description": "Covers how to create, access, and modify objects and their properties in JavaScript."
+          "description": "Introduction to neurons, layers, and activation functions."
         },
         {
-          "name": "Prototypes and Inheritance",
+          "name": "Training Neural Networks",
           "difficulty": "Hard",
-          "description": "Explains the prototype chain and how inheritance is achieved in JavaScript."
+          "description": "Understanding backpropagation and optimization algorithms in training neural networks."
         },
         {
-          "name": "Classes and ES6 Features",
+          "name": "Common Types of Neural Networks",
           "difficulty": "Hard",
-          "description": "Discusses the use of class syntax introduced in ECMAScript 6, including constructors and inheritance."
+          "description": "Overview of Convolutional and Recurrent Neural Networks and their applications."
         }
       ]
     },
     {
-      "name": "Asynchronous JavaScript",
+      "name": "Deep Learning",
       "subtopics": [
         {
-          "name": "Promises",
+          "name": "Deep Learning Frameworks",
           "difficulty": "Medium",
-          "description": "Introduces Promises for handling asynchronous operations and provides usage examples."
+          "description": "Introduction to frameworks like TensorFlow and PyTorch."
         },
         {
-          "name": "Async/Await",
+          "name": "Transfer Learning",
           "difficulty": "Hard",
-          "description": "Covers the async/await syntax to write asynchronous code in a more synchronous fashion."
+          "description": "Learning how to adapt a pre-trained model for a new task."
         },
         {
-          "name": "Event Loop",
+          "name": "Applications of Deep Learning",
           "difficulty": "Hard",
-          "description": "Explains the JavaScript event loop concept, including stack, queue, and how asynchronous code is executed."
+          "description": "Exploring real-world applications of deep learning in various fields."
         }
       ]
     },
     {
-      "name": "DOM Manipulation",
+      "name": "Natural Language Processing (NLP)",
       "subtopics": [
         {
-          "name": "Selecting Elements",
-          "difficulty": "Easy",
-          "description": "Covers methods for selecting DOM elements, such as getElementById, querySelector, etc."
+          "name": "Basic Concepts in NLP",
+          "difficulty": "Medium",
+          "description": "Overview of NLP techniques like tokenization and stemming."
         },
         {
-          "name": "Event Handling",
-          "difficulty": "Medium",
-          "description": "Discusses how to handle events on DOM elements, using addEventListener and handling event objects."
+          "name": "Sentiment Analysis",
+          "difficulty": "Hard",
+          "description": "Understanding methods to analyze sentiment in text data."
         },
         {
-          "name": "Creating and Removing Elements",
-          "difficulty": "Medium",
-          "description": "Explains how to dynamically create and remove HTML elements using JavaScript."
+          "name": "Language Models",
+          "difficulty": "Hard",
+          "description": "Exploration of language models including N-grams and neural network-based models."
         }
       ]
     },
     {
-      "name": "Advanced Concepts",
+      "name": "Computer Vision",
       "subtopics": [
         {
-          "name": "Closures",
+          "name": "Image Processing Techniques",
+          "difficulty": "Medium",
+          "description": "Introduction to image pre-processing methods such as filtering and resizing."
+        },
+        {
+          "name": "Object Detection and Recognition",
           "difficulty": "Hard",
-          "description": "Focuses on closures in JavaScript, demonstrating how they preserve the scope and use cases."
+          "description": "Learning how to detect and classify objects within images."
         },
         {
-          "name": "Modules",
-          "difficulty": "Medium",
-          "description": "Covers the module pattern and ES6 import/export syntax for encapsulating code and improving maintainability."
-        },
-        {
-          "name": "Error Handling",
-          "difficulty": "Medium",
-          "description": "Introduces error handling using try, catch, finally, and the importance of managing runtime errors."
+          "name": "Applications of Computer Vision",
+          "difficulty": "Hard",
+          "description": "Exploring how computer vision is applied in industries like healthcare and automotive."
         }
       ]
     },
     {
-      "name": "JavaScript in the Browser",
+      "name": "Ethics in AI",
       "subtopics": [
         {
-          "name": "JavaScript in HTML",
-          "difficulty": "Easy",
-          "description": "Covers different ways to include JavaScript in HTML using the <script> tag and onload events."
-        },
-        {
-          "name": "Browser Events",
+          "name": "Bias and Fairness",
           "difficulty": "Medium",
-          "description": "Discusses browser events such as load, resize, and scroll, including event bubbling and capturing."
+          "description": "Understanding issues related to bias in AI algorithms and ensuring fairness."
         },
         {
-          "name": "Web APIs",
+          "name": "Data Privacy",
           "difficulty": "Hard",
-          "description": "Explains how to interact with various browser Web APIs including Fetch API for network requests and Geolocation API."
-        }
-      ]
-    },
-    {
-      "name": "Testing and Debugging",
-      "subtopics": [
-        {
-          "name": "Debugging Techniques",
-          "difficulty": "Medium",
-          "description": "Covers techniques for debugging JavaScript code using browser developer tools and console methods."
+          "description": "Implications of AI on data privacy and the regulations that govern it."
         },
         {
-          "name": "Unit Testing Frameworks",
+          "name": "Future of AI",
           "difficulty": "Hard",
-          "description": "Introduces testing frameworks like Jest and Mocha for writing and running unit tests on JavaScript functions."
-        },
-        {
-          "name": "Test-Driven Development (TDD)",
-          "difficulty": "Hard",
-          "description": "Discusses the principles of TDD and how to write tests before actual code implementations in JavaScript projects."
+          "description": "Discussing the potential impacts of AI on society, jobs, and ethical concerns."
         }
       ]
     }
