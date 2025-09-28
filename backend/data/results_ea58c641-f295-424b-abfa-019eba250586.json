@@ -1,0 +1,219 @@
+{
+  "quiz_results": {
+    "user_id": "test_user",
+    "quiz_id": "Computer Science",
+    "timestamp": "2025-01-01T12:00:00Z",
+    "overall_score": {
+      "points_earned": 0,
+      "total_points": 25,
+      "percentage": 0.0,
+      "grade": "F"
+    },
+    "question_results": [
+      {
+        "question_id": "Q1",
+        "user_answer": "",
+        "correct_answer": "O(n^2)",
+        "is_correct": false,
+        "points_awarded": 0,
+        "feedback": "Incorrect. The correct answer is: O(n^2)"
+      },
+      {
+        "question_id": "Q2",
+        "user_answer": "",
+        "correct_answer": "Binary Search",
+        "is_correct": false,
+        "points_awarded": 0,
+        "feedback": "Incorrect. The correct answer is: Binary Search"
+      },
+      {
+        "question_id": "Q3",
+        "user_answer": "",
+        "correct_answer": "Dijkstra's Algorithm",
+        "is_correct": false,
+        "points_awarded": 0,
+        "feedback": "Incorrect. The correct answer is: Dijkstra's Algorithm"
+      },
+      {
+        "question_id": "Q4",
+        "user_answer": "",
+        "correct_answer": "Dynamic size",
+        "is_correct": false,
+        "points_awarded": 0,
+        "feedback": "Incorrect. The correct answer is: Dynamic size"
+      },
+      {
+        "question_id": "Q5",
+        "user_answer": "",
+        "correct_answer": "True",
+        "is_correct": false,
+        "points_awarded": 0,
+        "feedback": "Incorrect. The correct answer is: True"
+      },
+      {
+        "question_id": "Q6",
+        "user_answer": "",
+        "correct_answer": "Heap",
+        "is_correct": false,
+        "points_awarded": 0,
+        "feedback": "Incorrect. The correct answer is: Heap"
+      },
+      {
+        "question_id": "Q7",
+        "user_answer": "",
+        "correct_answer": "Inheritance is a mechanism where a new class derives properties and behavior (methods) from an existing class, promoting code reuse.",
+        "is_correct": false,
+        "points_awarded": 0,
+        "feedback": "Incorrect. The correct answer is: Inheritance is a mechanism where a new class derives properties and behavior (methods) from an existing class, promoting code reuse."
+      },
+      {
+        "question_id": "Q8",
+        "user_answer": "",
+        "correct_answer": "True",
+        "is_correct": false,
+        "points_awarded": 0,
+        "feedback": "Incorrect. The correct answer is: True"
+      },
+      {
+        "question_id": "Q9",
+        "user_answer": "",
+        "correct_answer": "O(n)",
+        "is_correct": false,
+        "points_awarded": 0,
+        "feedback": "Incorrect. The correct answer is: O(n)"
+      },
+      {
+        "question_id": "Q10",
+        "user_answer": "",
+        "correct_answer": "Traveling Salesman Problem",
+        "is_correct": false,
+        "points_awarded": 0,
+        "feedback": "Incorrect. The correct answer is: Traveling Salesman Problem"
+      },
+      {
+        "question_id": "Q11",
+        "user_answer": "",
+        "correct_answer": "Training on labeled data",
+        "is_correct": false,
+        "points_awarded": 0,
+        "feedback": "Incorrect. The correct answer is: Training on labeled data"
+      },
+      {
+        "question_id": "Q12",
+        "user_answer": "",
+        "correct_answer": "Overfitting occurs when a model learns the training data too well, capturing noise and outliers, which harms its performance on new data.",
+        "is_correct": false,
+        "points_awarded": 0,
+        "feedback": "Incorrect. The correct answer is: Overfitting occurs when a model learns the training data too well, capturing noise and outliers, which harms its performance on new data."
+      },
+      {
+        "question_id": "Q13",
+        "user_answer": "",
+        "correct_answer": "To filter incoming and outgoing network traffic",
+        "is_correct": false,
+        "points_awarded": 0,
+        "feedback": "Incorrect. The correct answer is: To filter incoming and outgoing network traffic"
+      },
+      {
+        "question_id": "Q14",
+        "user_answer": "",
+        "correct_answer": "True",
+        "is_correct": false,
+        "points_awarded": 0,
+        "feedback": "Incorrect. The correct answer is: True"
+      },
+      {
+        "question_id": "Q15",
+        "user_answer": "",
+        "correct_answer": "TLS",
+        "is_correct": false,
+        "points_awarded": 0,
+        "feedback": "Incorrect. The correct answer is: TLS"
+      },
+      {
+        "question_id": "Q16",
+        "user_answer": "",
+        "correct_answer": "To manage the execution of processes",
+        "is_correct": false,
+        "points_awarded": 0,
+        "feedback": "Incorrect. The correct answer is: To manage the execution of processes"
+      },
+      {
+        "question_id": "Q17",
+        "user_answer": "",
+        "correct_answer": "Paging is a memory management scheme that eliminates the need for contiguous allocation of physical memory, dividing memory into fixed-size pages.",
+        "is_correct": false,
+        "points_awarded": 0,
+        "feedback": "Incorrect. The correct answer is: Paging is a memory management scheme that eliminates the need for contiguous allocation of physical memory, dividing memory into fixed-size pages."
+      },
+      {
+        "question_id": "Q18",
+        "user_answer": "",
+        "correct_answer": "Flexibility",
+        "is_correct": false,
+        "points_awarded": 0,
+        "feedback": "Incorrect. The correct answer is: Flexibility"
+      },
+      {
+        "question_id": "Q19",
+        "user_answer": "",
+        "correct_answer": "SELECT",
+        "is_correct": false,
+        "points_awarded": 0,
+        "feedback": "Incorrect. The correct answer is: SELECT"
+      },
+      {
+        "question_id": "Q20",
+        "user_answer": "",
+        "correct_answer": "Normalization is the process of organizing a database to reduce redundancy and improve data integrity by dividing tables into related entities.",
+        "is_correct": false,
+        "points_awarded": 0,
+        "feedback": "Incorrect. The correct answer is: Normalization is the process of organizing a database to reduce redundancy and improve data integrity by dividing tables into related entities."
+      },
+      {
+        "question_id": "Q21",
+        "user_answer": "",
+        "correct_answer": "False",
+        "is_correct": false,
+        "points_awarded": 0,
+        "feedback": "Incorrect. The correct answer is: False"
+      },
+      {
+        "question_id": "Q22",
+        "user_answer": "",
+        "correct_answer": "P",
+        "is_correct": false,
+        "points_awarded": 0,
+        "feedback": "Incorrect. The correct answer is: P"
+      },
+      {
+        "question_id": "Q23",
+        "user_answer": "",
+        "correct_answer": "To schedule tasks in order",
+        "is_correct": false,
+        "points_awarded": 0,
+        "feedback": "Incorrect. The correct answer is: To schedule tasks in order"
+      },
+      {
+        "question_id": "Q24",
+        "user_answer": "",
+        "correct_answer": "Dynamic programming is an optimization technique used to solve complex problems by breaking them down into simpler subproblems and storing their solutions.",
+        "is_correct": false,
+        "points_awarded": 0,
+        "feedback": "Incorrect. The correct answer is: Dynamic programming is an optimization technique used to solve complex problems by breaking them down into simpler subproblems and storing their solutions."
+      },
+      {
+        "question_id": "Q25",
+        "user_answer": "",
+        "correct_answer": "To map data to a fixed size",
+        "is_correct": false,
+        "points_awarded": 0,
+        "feedback": "Incorrect. The correct answer is: To map data to a fixed size"
+      }
+    ],
+    "recommendations": [
+      "You scored 0.0%. Keep practicing to improve!",
+      "Review the questions you got wrong and study those topics more."
+    ]
+  }
+}

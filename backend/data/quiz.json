@@ -1,337 +1,303 @@
+```json
 {
   "quiz_metadata": {
-    "subject": "Artificial Intelligence & Machine Learning",
+    "subject": "JavaScript Programming",
     "total_questions": 25,
     "estimated_time_minutes": 30,
     "difficulty_distribution": {
-      "Easy": 6,
-      "Medium": 10,
-      "Hard": 9
+      "Easy": 10,
+      "Medium": 7,
+      "Hard": 8
     }
   },
   "questions": [
     {
-      "id": "1",
+      "id": "q1",
       "type": "multiple_choice",
       "difficulty": "Easy",
-      "topic": "Introduction to AI and ML",
-      "subtopic": "Definition of AI",
-      "question": "What does the term 'Artificial Intelligence' primarily refer to?",
-      "options": [
-        "Computer systems that perform tasks requiring human intelligence",
-        "Only robots performing physical tasks",
-        "The capability of a computer to solve mathematical equations",
-        "An automated software program that doesn't require human input"
-      ],
-      "correct_answer": "Computer systems that perform tasks requiring human intelligence",
-      "explanation": "Artificial Intelligence encompasses a range of computer systems that emulate human cognitive functions."
+      "topic": "Basic Syntax and Data Types",
+      "subtopic": "Variables and Data Types",
+      "question": "Which of the following is a valid variable declaration in JavaScript?",
+      "options": ["var x = 10;", "10 = x;", "variable x = 10;", "let = 10;"],
+      "correct_answer": "var x = 10;",
+      "explanation": "In JavaScript, 'var', 'let', and 'const' are used to declare variables. 'var x = 10;' is a valid declaration."
     },
     {
-      "id": "2",
+      "id": "q2",
       "type": "multiple_choice",
-      "difficulty": "Medium",
-      "topic": "Introduction to AI and ML",
-      "subtopic": "History of AI",
-      "question": "Which of the following events is considered a milestone in the history of Artificial Intelligence?",
-      "options": [
-        "The launch of the first manned flight",
-        "The creation of the Turing Test by Alan Turing",
-        "The development of the first computer virus",
-        "The invention of the internet"
-      ],
-      "correct_answer": "The creation of the Turing Test by Alan Turing",
-      "explanation": "The Turing Test, formulated by Alan Turing in 1950, is a foundational concept in AI history."
+      "difficulty": "Easy",
+      "topic": "Basic Syntax and Data Types",
+      "subtopic": "Operators",
+      "question": "What is the result of the expression '5 + 3 * 2'?",
+      "options": ["16", "11", "8", "10"],
+      "correct_answer": "11",
+      "explanation": "According to operator precedence, multiplication is performed before addition: 5 + (3 * 2) = 5 + 6 = 11."
     },
     {
-      "id": "3",
+      "id": "q3",
       "type": "true_false",
       "difficulty": "Easy",
-      "topic": "Introduction to AI and ML",
-      "subtopic": "Types of Machine Learning",
-      "question": "Supervised learning requires labeled data.",
-      "correct_answer": "True"
+      "topic": "Basic Syntax and Data Types",
+      "subtopic": "Variables and Data Types",
+      "question": "Strings in JavaScript can be enclosed by single quotes only.",
+      "correct_answer": "False",
+      "explanation": "Strings in JavaScript can be enclosed by single quotes, double quotes, or backticks."
     },
     {
-      "id": "4",
+      "id": "q4",
       "type": "multiple_choice",
       "difficulty": "Medium",
-      "topic": "Machine Learning Fundamentals",
-      "subtopic": "Data Preprocessing",
-      "question": "Which of the following techniques is NOT part of data preprocessing?",
-      "options": [
-        "Normalization",
-        "Label Encoding",
-        "Feature Extraction",
-        "Algorithm Optimization"
-      ],
-      "correct_answer": "Algorithm Optimization",
-      "explanation": "Algorithm optimization involves model training rather than preparing data for analysis."
+      "topic": "Basic Syntax and Data Types",
+      "subtopic": "Control Structures",
+      "question": "Which control structure is used to execute code based on a condition?",
+      "options": ["for loop", "while loop", "if statement", "function"],
+      "correct_answer": "if statement",
+      "explanation": "'if statements' are used in JavaScript to execute code based on whether a specified condition is true."
     },
     {
-      "id": "5",
+      "id": "q5",
       "type": "multiple_choice",
       "difficulty": "Medium",
-      "topic": "Machine Learning Fundamentals",
-      "subtopic": "Model Evaluation Metrics",
-      "question": "Which of the following metrics is most commonly used to evaluate classification models?",
-      "options": [
-        "Mean squared error",
-        "Accuracy",
-        "R-squared",
-        "Confusion Matrix"
-      ],
-      "correct_answer": "Accuracy",
-      "explanation": "Accuracy measures the percentage of correct predictions in classification tasks."
+      "topic": "Functions",
+      "subtopic": "Function Declaration and Invocation",
+      "question": "Which of the following correctly defines a function in JavaScript?",
+      "options": ["function myFunction() {}", "def myFunction() {}", "myFunction() = function {}", "function: myFunction {}"],
+      "correct_answer": "function myFunction() {}",
+      "explanation": "The correct syntax for declaring a function in JavaScript is 'function functionName() {}'."
     },
     {
-      "id": "6",
+      "id": "q6",
+      "type": "multiple_choice",
+      "difficulty": "Medium",
+      "topic": "Functions",
+      "subtopic": "Anonymous Functions and Arrow Functions",
+      "question": "What is the correct syntax for an arrow function that takes one parameter?",
+      "options": ["(x) => x * 2", "=> x * 2", "(x) -> x * 2", "x => x * 2"],
+      "correct_answer": "x => x * 2",
+      "explanation": "In JavaScript, arrow functions can be written as 'param => expression'."
+    },
+    {
+      "id": "q7",
       "type": "true_false",
       "difficulty": "Medium",
-      "topic": "Machine Learning Fundamentals",
-      "subtopic": "Overfitting vs. Underfitting",
-      "question": "Underfitting occurs when a model is too complex to fit the training data.",
-      "correct_answer": "False"
+      "topic": "Functions",
+      "subtopic": "Higher-Order Functions",
+      "question": "A higher-order function can take another function as an argument.",
+      "correct_answer": "True",
+      "explanation": "Higher-order functions in JavaScript can take other functions as arguments or return them as output."
     },
     {
-      "id": "7",
-      "type": "multiple_choice",
-      "difficulty": "Medium",
-      "topic": "Neural Networks",
-      "subtopic": "Basic Architecture of Neural Networks",
-      "question": "What is the function of the activation function in a neural network?",
-      "options": [
-        "To scale the input data",
-        "To introduce non-linearity",
-        "To optimize the weights",
-        "To initialize network parameters"
-      ],
-      "correct_answer": "To introduce non-linearity",
-      "explanation": "Activation functions help in modeling complex relationships by adding non-linearity to the network."
-    },
-    {
-      "id": "8",
+      "id": "q8",
       "type": "multiple_choice",
       "difficulty": "Hard",
-      "topic": "Neural Networks",
-      "subtopic": "Training Neural Networks",
-      "question": "Which algorithm is primarily used in training neural networks?",
+      "topic": "Object-Oriented Programming",
+      "subtopic": "Prototypes and Inheritance",
+      "question": "What is the prototype chain?",
       "options": [
-        "Gradient Descent",
-        "K-Means Clustering",
-        "Support Vector Machines",
-        "Decision Trees"
+        "A method to associate objects with their properties",
+        "A way to define static methods in JavaScript",
+        "A mechanism for inheritance in JavaScript",
+        "An array of function calls"
       ],
-      "correct_answer": "Gradient Descent",
-      "explanation": "Gradient Descent optimizes the weights in neural networks by minimizing the loss function."
+      "correct_answer": "A mechanism for inheritance in JavaScript",
+      "explanation": "The prototype chain is a core feature in JavaScript that allows objects to inherit properties and methods from other objects."
     },
     {
-      "id": "9",
+      "id": "q9",
       "type": "true_false",
       "difficulty": "Hard",
-      "topic": "Neural Networks",
-      "subtopic": "Common Types of Neural Networks",
-      "question": "Convolutional Neural Networks are mainly used for image processing tasks.",
-      "correct_answer": "True"
+      "topic": "Object-Oriented Programming",
+      "subtopic": "Classes and ES6 Features",
+      "question": "In ES6, a class must use the 'class' keyword to be defined.",
+      "correct_answer": "True",
+      "explanation": "In ES6, classes are defined using the 'class' keyword, which streamlines the creation of objects and inheritance."
     },
     {
-      "id": "10",
-      "type": "multiple_choice",
-      "difficulty": "Medium",
-      "topic": "Deep Learning",
-      "subtopic": "Deep Learning Frameworks",
-      "question": "Which of the following frameworks is widely known for building deep learning applications?",
-      "options": [
-        "TensorFlow",
-        "Pandas",
-        "NumPy",
-        "Matplotlib"
-      ],
-      "correct_answer": "TensorFlow",
-      "explanation": "TensorFlow is a popular framework for deep learning designed by Google, suitable for building models."
-    },
-    {
-      "id": "11",
-      "type": "multiple_choice",
-      "difficulty": "Medium",
-      "topic": "Natural Language Processing (NLP)",
-      "subtopic": "Basic Concepts in NLP",
-      "question": "What is the process of breaking text into individual words or tokens called?",
-      "options": [
-        "Stemming",
-        "Tokenization",
-        "Segmentation",
-        "Normalization"
-      ],
-      "correct_answer": "Tokenization",
-      "explanation": "Tokenization is the process of splitting text into smaller units like words or phrases."
-    },
-    {
-      "id": "12",
-      "type": "true_false",
-      "difficulty": "Hard",
-      "topic": "Natural Language Processing (NLP)",
-      "subtopic": "Sentiment Analysis",
-      "question": "Sentiment analysis can only determine positive and negative sentiments.",
-      "correct_answer": "False"
-    },
-    {
-      "id": "13",
-      "type": "multiple_choice",
-      "difficulty": "Hard",
-      "topic": "Computer Vision",
-      "subtopic": "Image Processing Techniques",
-      "question": "Which image processing technique is used to enhance the brightness and contrast of an image?",
-      "options": [
-        "Filtering",
-        "Histogram Equalization",
-        "Resizing",
-        "Noise Reduction"
-      ],
-      "correct_answer": "Histogram Equalization",
-      "explanation": "Histogram equalization improves the contrast by redistributing the pixel intensity values."
-    },
-    {
-      "id": "14",
-      "type": "true_false",
-      "difficulty": "Hard",
-      "topic": "Computer Vision",
-      "subtopic": "Object Detection and Recognition",
-      "question": "Object detection determines the location of objects in images.",
-      "correct_answer": "True"
-    },
-    {
-      "id": "15",
+      "id": "q10",
       "type": "short_answer",
-      "difficulty": "Medium",
-      "topic": "Ethics in AI",
-      "subtopic": "Bias and Fairness",
-      "question": "Explain why bias in AI is a significant issue.",
-      "correct_answer": "Bias in AI can lead to unfair outcomes and reinforce societal inequalities, affecting decision-making processes."
+      "difficulty": "Easy",
+      "topic": "Asynchronous JavaScript",
+      "subtopic": "Promises",
+      "question": "What is a Promise in JavaScript?",
+      "correct_answer": "A Promise is an object that represents the eventual completion or failure of an asynchronous operation and its resulting value.",
+      "explanation": ""
     },
     {
-      "id": "16",
-      "type": "multiple_choice",
-      "difficulty": "Hard",
-      "topic": "Ethics in AI",
-      "subtopic": "Data Privacy",
-      "question": "Which regulation is primarily aimed at protecting individual data privacy in the EU?",
-      "options": [
-        "GDPR",
-        "HIPAA",
-        "FERPA",
-        "CCPA"
-      ],
-      "correct_answer": "GDPR",
-      "explanation": "The General Data Protection Regulation (GDPR) sets guidelines for the collection and processing of personal information within the EU."
-    },
-    {
-      "id": "17",
+      "id": "q11",
       "type": "short_answer",
       "difficulty": "Hard",
-      "topic": "Ethics in AI",
-      "subtopic": "Future of AI",
-      "question": "What is one potential societal impact of AI?",
-      "correct_answer": "One potential impact is job displacement in various industries as AI systems automate tasks traditionally performed by humans."
+      "topic": "Asynchronous JavaScript",
+      "subtopic": "Async/Await",
+      "question": "Explain the purpose of the async/await syntax in JavaScript.",
+      "correct_answer": "The async/await syntax allows developers to write asynchronous code in a more synchronous style, making it easier to read and maintain.",
+      "explanation": ""
     },
     {
-      "id": "18",
-      "type": "short_answer",
-      "difficulty": "Medium",
-      "topic": "Machine Learning Fundamentals",
-      "subtopic": "Overfitting vs. Underfitting",
-      "question": "Describe the difference between overfitting and underfitting in model training.",
-      "correct_answer": "Overfitting occurs when a model learns too much from training data, capturing noise, while underfitting happens when a model is too simple to capture the underlying pattern."
-    },
-    {
-      "id": "19",
-      "type": "multiple_choice",
-      "difficulty": "Hard",
-      "topic": "Deep Learning",
-      "subtopic": "Transfer Learning",
-      "question": "What is transfer learning primarily used for?",
-      "options": [
-        "To improve performance by applying knowledge from one task to a different but related task",
-        "To train networks from scratch every time",
-        "To swap weights between two models",
-        "To enhance the input data variable"
-      ],
-      "correct_answer": "To improve performance by applying knowledge from one task to a different but related task",
-      "explanation": "Transfer learning enables the rapid development of models by leveraging pre-trained models."
-    },
-    {
-      "id": "20",
+      "id": "q12",
       "type": "multiple_choice",
       "difficulty": "Medium",
-      "topic": "Computer Vision",
-      "subtopic": "Applications of Computer Vision",
-      "question": "Which of the following is NOT an application of computer vision?",
-      "options": [
-        "Facial recognition",
-        "Autonomous vehicles",
-        "Speech recognition",
-        "Medical imaging"
-      ],
-      "correct_answer": "Speech recognition",
-      "explanation": "Speech recognition is a domain of Natural Language Processing, not computer vision."
+      "topic": "DOM Manipulation",
+      "subtopic": "Selecting Elements",
+      "question": "Which method selects elements by their ID in the DOM?",
+      "options": ["document.getElement()", "document.getElementById()", "document.querySelectorAll()", "document.querySelector()"],
+      "correct_answer": "document.getElementById()",
+      "explanation": "The 'getElementById' method is specifically designed to select a single element with a specified ID."
     },
     {
-      "id": "21",
-      "type": "multiple_choice",
-      "difficulty": "Hard",
-      "topic": "Natural Language Processing (NLP)",
-      "subtopic": "Language Models",
-      "question": "What does an N-gram model in NLP refer to?",
-      "options": [
-        "A type of neural network architecture",
-        "A statistical language model that predicts the next item in a sequence based on the previous N items",
-        "A method to encode categorical data",
-        "A technique for machine translation"
-      ],
-      "correct_answer": "A statistical language model that predicts the next item in a sequence based on the previous N items",
-      "explanation": "An N-gram model uses the frequency of N contiguous words to predict the likelihood of sequences."
-    },
-    {
-      "id": "22",
-      "type": "true_false",
-      "difficulty": "Hard",
-      "topic": "Deep Learning",
-      "subtopic": "Applications of Deep Learning",
-      "question": "Deep learning has been successfully applied in areas such as healthcare, finance, and autonomous driving.",
-      "correct_answer": "True"
-    },
-    {
-      "id": "23",
-      "type": "multiple_choice",
-      "difficulty": "Hard",
-      "topic": "Machine Learning Fundamentals",
-      "subtopic": "Model Evaluation Metrics",
-      "question": "Which metric is used to specifically evaluate false positives in a model?",
-      "options": [
-        "Accuracy",
-        "Precision",
-        "Recall",
-        "F1 Score"
-      ],
-      "correct_answer": "Precision",
-      "explanation": "Precision measures the proportion of true positives to the total predicted positives, highlighting false positives."
-    },
-    {
-      "id": "24",
-      "type": "short_answer",
-      "difficulty": "Medium",
-      "topic": "Ethics in AI",
-      "subtopic": "Bias and Fairness",
-      "question": "Explain one way to mitigate bias in AI systems.",
-      "correct_answer": "One way to mitigate bias is to ensure diverse and representative datasets are used during the training phase."
-    },
-    {
-      "id": "25",
+      "id": "q13",
       "type": "true_false",
       "difficulty": "Easy",
-      "topic": "Introduction to AI and ML",
-      "subtopic": "Definition of AI",
-      "question": "AI systems can only operate without any human input.",
-      "correct_answer": "False"
+      "topic": "DOM Manipulation",
+      "subtopic": "Event Handling",
+      "question": "Event listeners can be added to DOM elements to handle user interactions.",
+      "correct_answer": "True",
+      "explanation": "Event listeners are used in JavaScript to perform actions when specific events occur on DOM elements."
+    },
+    {
+      "id": "q14",
+      "type": "multiple_choice",
+      "difficulty": "Medium",
+      "topic": "DOM Manipulation",
+      "subtopic": "Creating and Removing Elements",
+      "question": "What method is used to remove an element from the DOM?",
+      "options": ["removeElement()", "deleteElement()", "element.remove()", "element.detach()"],
+      "correct_answer": "element.remove()",
+      "explanation": "The 'remove()' method is used to remove an element from the DOM."
+    },
+    {
+      "id": "q15",
+      "type": "short_answer",
+      "difficulty": "Hard",
+      "topic": "Advanced Concepts",
+      "subtopic": "Closures",
+      "question": "What is a closure in JavaScript?",
+      "correct_answer": "A closure is a function that retains access to its lexical scope, even when the function is executed outside that scope.",
+      "explanation": ""
+    },
+    {
+      "id": "q16",
+      "type": "multiple_choice",
+      "difficulty": "Hard",
+      "topic": "Advanced Concepts",
+      "subtopic": "Modules",
+      "question": "What is the purpose of modules in JavaScript?",
+      "options": [
+        "To reduce execution time",
+        "To encapsulate code for reuse",
+        "To share memory between scripts",
+        "To execute code simultaneously"
+      ],
+      "correct_answer": "To encapsulate code for reuse",
+      "explanation": "Modules in JavaScript enable encapsulation, organization, and reuse of code across different parts of an application."
+    },
+    {
+      "id": "q17",
+      "type": "true_false",
+      "difficulty": "Medium",
+      "topic": "Advanced Concepts",
+      "subtopic": "Error Handling",
+      "question": "The try/catch construct can be used to handle exceptions in JavaScript.",
+      "correct_answer": "True",
+      "explanation": "Using try/catch allows developers to gracefully handle exceptions that could occur in their code."
+    },
+    {
+      "id": "q18",
+      "type": "multiple_choice",
+      "difficulty": "Hard",
+      "topic": "Asynchronous JavaScript",
+      "subtopic": "Event Loop",
+      "question": "What is the role of the event loop in JavaScript?",
+      "options": [
+        "To execute synchronous code faster",
+        "To manage asynchronous operations",
+        "To handle HTTP requests",
+        "To process events in parallel"
+      ],
+      "correct_answer": "To manage asynchronous operations",
+      "explanation": "The event loop allows JavaScript to perform non-blocking I/O operations, handling asynchronous events even within a single-threaded environment."
+    },
+    {
+      "id": "q19",
+      "type": "short_answer",
+      "difficulty": "Hard",
+      "topic": "Advanced Concepts",
+      "subtopic": "Error Handling",
+      "question": "How does the finally block work in a try/catch statement?",
+      "correct_answer": "The finally block executes after the try and catch blocks, regardless of whether an exception was thrown.",
+      "explanation": ""
+    },
+    {
+      "id": "q20",
+      "type": "short_answer",
+      "difficulty": "Medium",
+      "topic": "Basic Syntax and Data Types",
+      "subtopic": "Operators",
+      "question": "What is the difference between === and == in JavaScript?",
+      "correct_answer": "The === operator checks for both value and type equality, while == checks for value equality only, performing type coercion if necessary.",
+      "explanation": ""
+    },
+    {
+      "id": "q21",
+      "type": "multiple_choice",
+      "difficulty": "Medium",
+      "topic": "Functions",
+      "subtopic": "Anonymous Functions and Arrow Functions",
+      "question": "What is the difference between an anonymous function and a named function?",
+      "options": [
+        "Anonymous functions cannot return values.",
+        "Named functions can be invoked before their declaration.",
+        "Anonymous functions are slower to execute.",
+        "There is no difference."
+      ],
+      "correct_answer": "Named functions can be invoked before their declaration.",
+      "explanation": "Named functions are hoisted, meaning they can be called before their definition in the code, while anonymous functions cannot."
+    },
+    {
+      "id": "q22",
+      "type": "multiple_choice",
+      "difficulty": "Hard",
+      "topic": "Object-Oriented Programming",
+      "subtopic": "Classes and ES6 Features",
+      "question": "Which of the following correctly creates a class in ES6?",
+      "options": [
+        "class MyClass() {}",
+        "class MyClass: {}",
+        "class MyClass {}",
+        "class MyClass {}()"
+      ],
+      "correct_answer": "class MyClass {}",
+      "explanation": "The correct syntax for defining a class in ES6 requires the use of the 'class' keyword followed by the class name."
+    },
+    {
+      "id": "q23",
+      "type": "true_false",
+      "difficulty": "Hard",
+      "topic": "Advanced Concepts",
+      "subtopic": "Closures",
+      "question": "Closures can lead to memory leaks if not managed correctly.",
+      "correct_answer": "True",
+      "explanation": "If closures retain references to outer variables that are no longer needed, it can prevent garbage collection and cause memory leaks."
+    },
+    {
+      "id": "q24",
+      "type": "true_false",
+      "difficulty": "Medium",
+      "topic": "Basic Syntax and Data Types",
+      "subtopic": "Variables and Data Types",
+      "question": "JavaScript is a statically typed language.",
+      "correct_answer": "False",
+      "explanation": "JavaScript is dynamically typed, meaning variable types are determined at runtime."
+    },
+    {
+      "id": "q25",
+      "type": "short_answer",
+      "difficulty": "Hard",
+      "topic": "Asynchronous JavaScript",
+      "subtopic": "Promises",
+      "question": "What are the three states of a Promise in JavaScript?",
+      "correct_answer": "The three states of a Promise are pending, fulfilled, and rejected.",
+      "explanation": ""
     }
   ]
 }
+```

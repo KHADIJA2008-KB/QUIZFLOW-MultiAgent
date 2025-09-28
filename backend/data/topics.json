@@ -1,165 +1,167 @@
+```json
 {
-  "subject": "Computer Science",
+  "subject": "JavaScript Programming",
   "topics": [
     {
-      "name": "Algorithms",
+      "name": "Basic Syntax and Data Types",
       "subtopics": [
         {
-          "name": "Sorting Algorithms",
+          "name": "Variables and Data Types",
           "difficulty": "Easy",
-          "description": "Covers basic sorting algorithms such as Bubble Sort, Selection Sort, and Insertion Sort, including their operational principles and applications."
+          "description": "Covers the declaration and use of variables, including primitive data types such as strings, numbers, booleans, null, and undefined."
         },
         {
-          "name": "Searching Algorithms",
+          "name": "Operators",
+          "difficulty": "Easy",
+          "description": "Explores different types of operators in JavaScript including arithmetic, comparison, and logical operators."
+        },
+        {
+          "name": "Control Structures",
           "difficulty": "Medium",
-          "description": "Explores searching techniques like Linear Search and Binary Search with their use cases and time complexity analysis."
-        },
-        {
-          "name": "Graph Algorithms",
-          "difficulty": "Hard",
-          "description": "Involves complex algorithms such as Dijkstra's and A* for pathfinding and navigating graphs, including real-world applications in networking and AI."
+          "description": "Focuses on control flow constructs like if-else statements, switch cases, loops (for, while), and their usage."
         }
       ]
     },
     {
-      "name": "Data Structures",
+      "name": "Functions",
       "subtopics": [
         {
-          "name": "Arrays and Linked Lists",
+          "name": "Function Declaration and Invocation",
           "difficulty": "Easy",
-          "description": "Introduction to fundamental data structures including arrays and singly/doubly linked lists, their operations, advantages, and disadvantages."
+          "description": "Introduces how to declare and invoke functions in JavaScript, including function expressions."
         },
         {
-          "name": "Stacks and Queues",
+          "name": "Anonymous Functions and Arrow Functions",
           "difficulty": "Medium",
-          "description": "Study of stack and queue data structures, their implementations, and applications in programming."
+          "description": "Discusses anonymous functions and introduces the syntax and advantages of arrow functions."
         },
         {
-          "name": "Trees and Graphs",
+          "name": "Higher-Order Functions",
           "difficulty": "Hard",
-          "description": "Explains binary trees, binary search trees, AVL trees, and graph theory fundamentals, including traversals and applications in databases."
+          "description": "Explains concepts of higher-order functions that accept other functions as arguments or return functions."
         }
       ]
     },
     {
-      "name": "Programming Concepts",
+      "name": "Object-Oriented Programming",
       "subtopics": [
         {
-          "name": "Object-Oriented Programming",
+          "name": "Objects and Properties",
           "difficulty": "Medium",
-          "description": "Covers core principles of OOP including classes, objects, inheritance, and polymorphism in programming contexts."
+          "description": "Covers how to create, access, and modify objects and their properties in JavaScript."
         },
         {
-          "name": "Functional Programming",
+          "name": "Prototypes and Inheritance",
           "difficulty": "Hard",
-          "description": "Explores the fundamentals of functional programming paradigms, higher-order functions, and immutability considerations in software design."
+          "description": "Explains the prototype chain and how inheritance is achieved in JavaScript."
         },
         {
-          "name": "Concurrency in Programming",
-          "difficulty": "Medium",
-          "description": "Discusses the principles of concurrency, including threading, parallelism, and synchronization in various programming languages."
+          "name": "Classes and ES6 Features",
+          "difficulty": "Hard",
+          "description": "Discusses the use of class syntax introduced in ECMAScript 6, including constructors and inheritance."
         }
       ]
     },
     {
-      "name": "Complexity Analysis",
+      "name": "Asynchronous JavaScript",
       "subtopics": [
         {
-          "name": "Big O Notation",
-          "difficulty": "Easy",
-          "description": "An introduction to time and space complexity measuring techniques using Big O notation, focusing on basic comprehension."
-        },
-        {
-          "name": "Comparative Analysis",
+          "name": "Promises",
           "difficulty": "Medium",
-          "description": "Investigates the efficiency of algorithms through comparative analysis and case studies in the context of performance implications."
+          "description": "Introduces Promises for handling asynchronous operations and provides usage examples."
         },
         {
-          "name": "NP-Completeness",
+          "name": "Async/Await",
           "difficulty": "Hard",
-          "description": "An advanced examination of NP-complete problems, their characteristics, and implications on computational theory."
+          "description": "Covers the async/await syntax to write asynchronous code in a more synchronous fashion."
+        },
+        {
+          "name": "Event Loop",
+          "difficulty": "Hard",
+          "description": "Explains the JavaScript event loop concept, including stack, queue, and how asynchronous code is executed."
         }
       ]
     },
     {
-      "name": "Machine Learning Basics",
+      "name": "DOM Manipulation",
       "subtopics": [
         {
-          "name": "Introduction to ML",
+          "name": "Selecting Elements",
           "difficulty": "Easy",
-          "description": "Covers fundamental concepts of machine learning including supervised and unsupervised learning, with practical applications in real-world scenarios."
+          "description": "Covers methods for selecting DOM elements, such as getElementById, querySelector, etc."
         },
         {
-          "name": "Feature Engineering",
+          "name": "Event Handling",
           "difficulty": "Medium",
-          "description": "Focuses on methods to process and extract meaningful data features suitable for machine learning models."
+          "description": "Discusses how to handle events on DOM elements, using addEventListener and handling event objects."
         },
         {
-          "name": "Overfitting and Underfitting",
-          "difficulty": "Hard",
-          "description": "Discusses the concepts of model generalization, overfitting, and underfitting, including prevention techniques in training models."
+          "name": "Creating and Removing Elements",
+          "difficulty": "Medium",
+          "description": "Explains how to dynamically create and remove HTML elements using JavaScript."
         }
       ]
     },
     {
-      "name": "Network Security",
+      "name": "Advanced Concepts",
       "subtopics": [
         {
-          "name": "Firewalls and VPNs",
-          "difficulty": "Easy",
-          "description": "Introductory knowledge on firewalls and VPNs, their purposes, and basic configuration scenarios."
-        },
-        {
-          "name": "Intrusion Detection Systems",
-          "difficulty": "Medium",
-          "description": "Understanding of various intrusion detection systems (IDS), their functioning and the methodologies behind them."
-        },
-        {
-          "name": "Security Protocols",
+          "name": "Closures",
           "difficulty": "Hard",
-          "description": "In-depth analysis of security protocols such as SSL/TLS, their mechanisms, and applications in secure communications."
+          "description": "Focuses on closures in JavaScript, demonstrating how they preserve the scope and use cases."
+        },
+        {
+          "name": "Modules",
+          "difficulty": "Medium",
+          "description": "Covers the module pattern and ES6 import/export syntax for encapsulating code and improving maintainability."
+        },
+        {
+          "name": "Error Handling",
+          "difficulty": "Medium",
+          "description": "Introduces error handling using try, catch, finally, and the importance of managing runtime errors."
         }
       ]
     },
     {
-      "name": "Operating Systems",
+      "name": "JavaScript in the Browser",
       "subtopics": [
         {
-          "name": "Process Management",
+          "name": "JavaScript in HTML",
           "difficulty": "Easy",
-          "description": "Introduction to process lifecycle, scheduling algorithms, and multithreading concepts in operating systems."
+          "description": "Covers different ways to include JavaScript in HTML using the <script> tag and onload events."
         },
         {
-          "name": "Memory Management",
+          "name": "Browser Events",
           "difficulty": "Medium",
-          "description": "Covers concepts of memory allocation, paging, segmentation, and garbage collection techniques."
+          "description": "Discusses browser events such as load, resize, and scroll, including event bubbling and capturing."
         },
         {
-          "name": "File Systems",
+          "name": "Web APIs",
           "difficulty": "Hard",
-          "description": "Explores advanced file system principles, including file organization, storage allocation, and filesystem types."
+          "description": "Explains how to interact with various browser Web APIs including Fetch API for network requests and Geolocation API."
         }
       ]
     },
     {
-      "name": "Database Management",
+      "name": "Testing and Debugging",
       "subtopics": [
         {
-          "name": "SQL Basics",
-          "difficulty": "Easy",
-          "description": "Introductory tutorial on SQL queries, CRUD operations, and relational database fundamentals."
-        },
-        {
-          "name": "Normalization",
+          "name": "Debugging Techniques",
           "difficulty": "Medium",
-          "description": "Study of database normalization forms, their benefits, and the impact of normalization on database design."
+          "description": "Covers techniques for debugging JavaScript code using browser developer tools and console methods."
         },
         {
-          "name": "Transactions and ACID Properties",
+          "name": "Unit Testing Frameworks",
           "difficulty": "Hard",
-          "description": "Advanced exploration of database transactions, ACID properties, and their importance to data integrity and concurrency."
+          "description": "Introduces testing frameworks like Jest and Mocha for writing and running unit tests on JavaScript functions."
+        },
+        {
+          "name": "Test-Driven Development (TDD)",
+          "difficulty": "Hard",
+          "description": "Discusses the principles of TDD and how to write tests before actual code implementations in JavaScript projects."
         }
       ]
     }
   ]
 }
+```
