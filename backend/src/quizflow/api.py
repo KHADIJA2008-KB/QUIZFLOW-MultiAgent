@@ -58,10 +58,12 @@ class QuizSession(BaseModel):
     status: str
     created_at: str
     quiz_data: Optional[Dict[str, Any]] = None
+    results: Optional[Dict[str, Any]] = None
     error_message: Optional[str] = None
 
 # In-memory storage (use Redis/DB in production)
 quiz_sessions: Dict[str, QuizSession] = {}
+quiz_results: Dict[str, Dict[str, Any]] = {}  # session_id -> results
 
 # Subject categories
 SUBJECTS = [
@@ -182,6 +184,9 @@ async def submit_answers(answers: QuizAnswers):
         session.status = "completed"
         session.results = results
         
+        # Store results in separate dictionary for easy retrieval
+        quiz_results[answers.quiz_id] = results
+        
         return results
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Evaluation failed: {str(e)}")
@@ -221,10 +226,35 @@ async def get_quiz_results(session_id: str):
     if session.status != "completed":
         raise HTTPException(status_code=400, detail="Quiz not completed yet")
     
-    if not session.results:
-        raise HTTPException(status_code=404, detail="Results not found")
+    # Check session results first
+    if session.results:
+        return session.results
     
-    return session.results
+    # Check separate results storage
+    if session_id in quiz_results:
+        return quiz_results[session_id]
+    
+    # Try to load from session-specific results file
+    try:
+        session_results_file = DATA_DIR / f"results_{session_id}.json"
+        if session_results_file.exists():
+            with open(session_results_file, 'r') as f:
+                stored_results = json.load(f)
+                return stored_results
+    except Exception as e:
+        print(f"Error loading session results file: {e}")
+    
+    # Try to load from general results file as fallback
+    try:
+        results_file = DATA_DIR / "results.json"
+        if results_file.exists():
+            with open(results_file, 'r') as f:
+                stored_results = json.load(f)
+                return stored_results
+    except Exception as e:
+        print(f"Error loading general results file: {e}")
+    
+    raise HTTPException(status_code=404, detail="Results not found")
 
 def start_server():
     """Start the production server"""

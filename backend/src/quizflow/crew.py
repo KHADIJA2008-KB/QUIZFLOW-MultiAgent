@@ -167,9 +167,15 @@ class QuizflowCrew:
             # Create a simple evaluation (this would normally be done by the quiz_checker agent)
             results = self._simple_evaluation(quiz_data, user_answers)
             
-            # Save results
+            # Save results - both general and session-specific
             results_file = self.data_dir / "results.json"
             with open(results_file, 'w') as f:
+                json.dump(results, f, indent=2)
+            
+            # Save session-specific results
+            quiz_id = user_answers.get('quiz_id', 'unknown')
+            session_results_file = self.data_dir / f"results_{quiz_id}.json"
+            with open(session_results_file, 'w') as f:
                 json.dump(results, f, indent=2)
             
             print("✅ Quiz evaluation completed")
