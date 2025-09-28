@@ -1,4 +1,4 @@
-# QuizFlow - Production Ready
+# QuizFlow - MultiAgent
 
 AI-powered quiz platform with multi-agent generation system.
 
