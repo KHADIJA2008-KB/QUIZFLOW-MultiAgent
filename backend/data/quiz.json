@@ -1,339 +1,349 @@
-```json
 {
   "quiz_metadata": {
     "subject": "Artificial Intelligence & Machine Learning",
     "total_questions": 25,
-    "estimated_time_minutes": 30,
+    "estimated_time_minutes": 37.5,
     "difficulty_distribution": {
-      "Easy": 6,
-      "Medium": 10,
-      "Hard": 9
-    }
+      "Easy": 0,
+      "Medium": 25,
+      "Hard": 0
+    },
+    "includes_coding": false
   },
   "questions": [
     {
-      "id": "1",
-      "type": "multiple_choice",
-      "difficulty": "Easy",
-      "topic": "Introduction to AI and ML",
-      "subtopic": "Definition of AI",
-      "question": "What does the term 'Artificial Intelligence' primarily refer to?",
-      "options": [
-        "Computer systems that perform tasks requiring human intelligence",
-        "Only robots performing physical tasks",
-        "The capability of a computer to solve mathematical equations",
-        "An automated software program that doesn't require human input"
-      ],
-      "correct_answer": "Computer systems that perform tasks requiring human intelligence",
-      "explanation": "Artificial Intelligence encompasses a range of technologies that enable machines to emulate human cognitive functions."
-    },
-    {
-      "id": "2",
+      "id": "q1",
       "type": "multiple_choice",
       "difficulty": "Medium",
-      "topic": "Introduction to AI and ML",
-      "subtopic": "History of AI",
-      "question": "Which of the following events is considered a milestone in the history of Artificial Intelligence?",
+      "topic": "Artificial Intelligence & Machine Learning",
+      "subtopic": "Machine Learning Basics",
+      "question": "What is the primary goal of supervised learning?",
       "options": [
-        "The launch of the first manned flight",
-        "The creation of the Turing Test by Alan Turing",
-        "The development of the first computer virus",
-        "The invention of the internet"
+        "To discover patterns in data",
+        "To predict outcomes based on input data",
+        "To reduce data dimensionality",
+        "To cluster similar data points"
       ],
-      "correct_answer": "The creation of the Turing Test by Alan Turing",
-      "explanation": "The Turing Test, formulated by Alan Turing in 1950, is a foundational concept in AI philosophy and history."
+      "correct_answer": "B",
+      "explanation": "Supervised learning aims to learn a mapping from input to output based on labeled data."
     },
     {
-      "id": "3",
-      "type": "true_false",
-      "difficulty": "Easy",
-      "topic": "Introduction to AI and ML",
-      "subtopic": "Types of Machine Learning",
-      "question": "Supervised learning requires labeled data.",
-      "correct_answer": "True"
-    },
-    {
-      "id": "4",
+      "id": "q2",
       "type": "multiple_choice",
       "difficulty": "Medium",
-      "topic": "Machine Learning Fundamentals",
+      "topic": "Artificial Intelligence & Machine Learning",
+      "subtopic": "Neural Networks",
+      "question": "Which of the following is NOT an activation function?",
+      "options": [
+        "ReLU",
+        "Sigmoid",
+        "Softmax",
+        "Gradient Descent"
+      ],
+      "correct_answer": "D",
+      "explanation": "Gradient Descent is an optimization algorithm, while the other options are activation functions used in neural networks."
+    },
+    {
+      "id": "q3",
+      "type": "multiple_choice",
+      "difficulty": "Medium",
+      "topic": "Artificial Intelligence & Machine Learning",
+      "subtopic": "Deep Learning",
+      "question": "What is the main purpose of dropout in neural networks?",
+      "options": [
+        "To increase model complexity",
+        "To prevent overfitting",
+        "To speed up training",
+        "To normalize data"
+      ],
+      "correct_answer": "B",
+      "explanation": "Dropout is a regularization technique used to prevent overfitting by randomly dropping units during training."
+    },
+    {
+      "id": "q4",
+      "type": "multiple_choice",
+      "difficulty": "Medium",
+      "topic": "Artificial Intelligence & Machine Learning",
+      "subtopic": "Unsupervised Learning",
+      "question": "Which algorithm is commonly used for clustering data?",
+      "options": [
+        "Linear Regression",
+        "K-Means",
+        "Support Vector Machine",
+        "Random Forest"
+      ],
+      "correct_answer": "B",
+      "explanation": "K-Means is a popular clustering algorithm used in unsupervised learning to group similar data points."
+    },
+    {
+      "id": "q5",
+      "type": "multiple_choice",
+      "difficulty": "Medium",
+      "topic": "Artificial Intelligence & Machine Learning",
+      "subtopic": "Reinforcement Learning",
+      "question": "In reinforcement learning, what is the term for the feedback received from the environment?",
+      "options": [
+        "Action",
+        "Reward",
+        "State",
+        "Policy"
+      ],
+      "correct_answer": "B",
+      "explanation": "In reinforcement learning, a reward is the feedback received from the environment after taking an action."
+    },
+    {
+      "id": "q6",
+      "type": "multiple_choice",
+      "difficulty": "Medium",
+      "topic": "Artificial Intelligence & Machine Learning",
+      "subtopic": "Natural Language Processing",
+      "question": "Which of the following is a common technique in Natural Language Processing for text preprocessing?",
+      "options": [
+        "Tokenization",
+        "Normalization",
+        "Encoding",
+        "All of the above"
+      ],
+      "correct_answer": "D",
+      "explanation": "All listed techniques are commonly used in NLP for text preprocessing tasks."
+    },
+    {
+      "id": "q7",
+      "type": "multiple_choice",
+      "difficulty": "Medium",
+      "topic": "Artificial Intelligence & Machine Learning",
+      "subtopic": "Model Evaluation",
+      "question": "What does the F1 score measure in a classification model?",
+      "options": [
+        "Accuracy",
+        "Precision and Recall",
+        "Specificity",
+        "ROC Curve"
+      ],
+      "correct_answer": "B",
+      "explanation": "The F1 score is the harmonic mean of precision and recall, providing a balance between the two metrics."
+    },
+    {
+      "id": "q8",
+      "type": "multiple_choice",
+      "difficulty": "Medium",
+      "topic": "Artificial Intelligence & Machine Learning",
       "subtopic": "Data Preprocessing",
-      "question": "Which of the following techniques is NOT part of data preprocessing?",
+      "question": "Which technique is used to scale features to a uniform range?",
       "options": [
         "Normalization",
-        "Label Encoding",
-        "Feature Extraction",
-        "Algorithm Optimization"
+        "Encoding",
+        "Feature Selection",
+        "Imputation"
       ],
-      "correct_answer": "Algorithm Optimization",
-      "explanation": "Algorithm optimization occurs during model training, not during the data preparation phase."
+      "correct_answer": "A",
+      "explanation": "Normalization scales features to a specific range, typically [0, 1] or [-1, 1]."
     },
     {
-      "id": "5",
+      "id": "q9",
       "type": "multiple_choice",
       "difficulty": "Medium",
-      "topic": "Machine Learning Fundamentals",
-      "subtopic": "Model Evaluation Metrics",
-      "question": "Which of the following metrics is most commonly used to evaluate classification models?",
+      "topic": "Artificial Intelligence & Machine Learning",
+      "subtopic": "Feature Engineering",
+      "question": "What is feature engineering?",
       "options": [
-        "Mean squared error",
-        "Accuracy",
-        "R-squared",
-        "Confusion Matrix"
+        "The process of selecting the best model",
+        "The process of creating new features from existing data",
+        "The process of evaluating model performance",
+        "The process of tuning model parameters"
       ],
-      "correct_answer": "Accuracy",
-      "explanation": "Accuracy measures the ratio of correctly predicted instances out of total instances in classification tasks."
+      "correct_answer": "B",
+      "explanation": "Feature engineering involves creating new features that improve the performance of machine learning models."
     },
     {
-      "id": "6",
+      "id": "q10",
+      "type": "multiple_choice",
+      "difficulty": "Medium",
+      "topic": "Artificial Intelligence & Machine Learning",
+      "subtopic": "Decision Trees",
+      "question": "What criterion is commonly used to split nodes in a decision tree?",
+      "options": [
+        "Entropy",
+        "Variance",
+        "Cosine Similarity",
+        "Mean Squared Error"
+      ],
+      "correct_answer": "A",
+      "explanation": "Entropy is often used as a criterion for splitting nodes in classification decision trees."
+    },
+    {
+      "id": "q11",
       "type": "true_false",
       "difficulty": "Medium",
-      "topic": "Machine Learning Fundamentals",
-      "subtopic": "Overfitting vs. Underfitting",
-      "question": "Underfitting occurs when a model is too complex to fit the training data.",
-      "correct_answer": "False"
+      "topic": "Artificial Intelligence & Machine Learning",
+      "subtopic": "General Concepts",
+      "question": "True or False: Overfitting occurs when a model learns the noise in the training data instead of the underlying patterns.",
+      "correct_answer": "True",
+      "explanation": "Overfitting happens when a model captures noise and outliers in the training data, which reduces its generalization to unseen data."
     },
     {
-      "id": "7",
-      "type": "multiple_choice",
-      "difficulty": "Medium",
-      "topic": "Neural Networks",
-      "subtopic": "Basic Architecture of Neural Networks",
-      "question": "What is the function of the activation function in a neural network?",
-      "options": [
-        "To scale the input data",
-        "To introduce non-linearity",
-        "To optimize the weights",
-        "To initialize network parameters"
-      ],
-      "correct_answer": "To introduce non-linearity",
-      "explanation": "Activation functions allow neural networks to capture complex relationships in data by introducing non-linear transformations."
-    },
-    {
-      "id": "8",
-      "type": "multiple_choice",
-      "difficulty": "Hard",
-      "topic": "Neural Networks",
-      "subtopic": "Training Neural Networks",
-      "question": "Which algorithm is primarily used in training neural networks?",
-      "options": [
-        "Gradient Descent",
-        "K-Means Clustering",
-        "Support Vector Machines",
-        "Decision Trees"
-      ],
-      "correct_answer": "Gradient Descent",
-      "explanation": "Gradient Descent is an optimization algorithm that adjusts weights to minimize the loss function in training."
-    },
-    {
-      "id": "9",
+      "id": "q12",
       "type": "true_false",
-      "difficulty": "Hard",
-      "topic": "Neural Networks",
-      "subtopic": "Common Types of Neural Networks",
-      "question": "Convolutional Neural Networks are mainly used for image processing tasks.",
-      "correct_answer": "True"
-    },
-    {
-      "id": "10",
-      "type": "multiple_choice",
       "difficulty": "Medium",
-      "topic": "Deep Learning",
-      "subtopic": "Deep Learning Frameworks",
-      "question": "Which of the following frameworks is widely known for building deep learning applications?",
-      "options": [
-        "TensorFlow",
-        "Pandas",
-        "NumPy",
-        "Matplotlib"
-      ],
-      "correct_answer": "TensorFlow",
-      "explanation": "TensorFlow is a widely adopted framework for deep learning, providing robust support for the construction of neural networks."
+      "topic": "Artificial Intelligence & Machine Learning",
+      "subtopic": "Neural Networks",
+      "question": "True or False: A deeper neural network will always perform better than a shallower one.",
+      "correct_answer": "False",
+      "explanation": "While deeper networks can learn more complex patterns, they are also more prone to overfitting and may not always perform better."
     },
     {
-      "id": "11",
-      "type": "multiple_choice",
+      "id": "q13",
+      "type": "true_false",
       "difficulty": "Medium",
-      "topic": "Natural Language Processing (NLP)",
-      "subtopic": "Basic Concepts in NLP",
-      "question": "What is the process of breaking text into individual words or tokens called?",
-      "options": [
-        "Stemming",
-        "Tokenization",
-        "Segmentation",
-        "Normalization"
-      ],
-      "correct_answer": "Tokenization",
-      "explanation": "Tokenization is the method of dividing text into smaller units, facilitating further textual analysis."
+      "topic": "Artificial Intelligence & Machine Learning",
+      "subtopic": "Machine Learning Algorithms",
+      "question": "True or False: Support Vector Machines (SVM) can only be used for linear classification problems.",
+      "correct_answer": "False",
+      "explanation": "SVMs can use kernel tricks to classify non-linear data by transforming it into a higher-dimensional space."
     },
     {
-      "id": "12",
-      "type": "true_false",
-      "difficulty": "Hard",
-      "topic": "Natural Language Processing (NLP)",
-      "subtopic": "Sentiment Analysis",
-      "question": "Sentiment analysis can only determine positive and negative sentiments.",
-      "correct_answer": "False"
-    },
-    {
-      "id": "13",
-      "type": "multiple_choice",
-      "difficulty": "Hard",
-      "topic": "Computer Vision",
-      "subtopic": "Image Processing Techniques",
-      "question": "Which image processing technique is used to enhance the brightness and contrast of an image?",
-      "options": [
-        "Filtering",
-        "Histogram Equalization",
-        "Resizing",
-        "Noise Reduction"
-      ],
-      "correct_answer": "Histogram Equalization",
-      "explanation": "Histogram equalization redistributes the intensity values in an image, enhancing its contrast."
-    },
-    {
-      "id": "14",
-      "type": "true_false",
-      "difficulty": "Hard",
-      "topic": "Computer Vision",
-      "subtopic": "Object Detection and Recognition",
-      "question": "Object detection determines the location of objects in images.",
-      "correct_answer": "True"
-    },
-    {
-      "id": "15",
+      "id": "q14",
       "type": "short_answer",
       "difficulty": "Medium",
-      "topic": "Ethics in AI",
-      "subtopic": "Bias and Fairness",
-      "question": "Explain why bias in AI is a significant issue.",
-      "correct_answer": "Bias in AI can lead to unfair treatment of individuals and groups, reinforcing existing inequalities and leading to questionable decision-making."
+      "topic": "Artificial Intelligence & Machine Learning",
+      "subtopic": "General Concepts",
+      "question": "Define 'overfitting' in the context of machine learning.",
+      "correct_answer": "Overfitting occurs when a model learns the training data too well, capturing noise and outliers, which negatively impacts its performance on unseen data.",
+      "explanation": "Overfitting leads to high accuracy on training data but poor generalization on test or validation data."
     },
     {
-      "id": "16",
-      "type": "multiple_choice",
-      "difficulty": "Hard",
-      "topic": "Ethics in AI",
-      "subtopic": "Data Privacy",
-      "question": "Which regulation is primarily aimed at protecting individual data privacy in the EU?",
-      "options": [
-        "GDPR",
-        "HIPAA",
-        "FERPA",
-        "CCPA"
-      ],
-      "correct_answer": "GDPR",
-      "explanation": "The General Data Protection Regulation (GDPR) mandates strict guidelines on personal data collection and processing in Europe."
-    },
-    {
-      "id": "17",
-      "type": "short_answer",
-      "difficulty": "Hard",
-      "topic": "Ethics in AI",
-      "subtopic": "Future of AI",
-      "question": "What is one potential societal impact of AI?",
-      "correct_answer": "One potential impact is job displacement in various industries, as AI systems can automate tasks that were traditionally performed by humans."
-    },
-    {
-      "id": "18",
+      "id": "q15",
       "type": "short_answer",
       "difficulty": "Medium",
-      "topic": "Machine Learning Fundamentals",
-      "subtopic": "Overfitting vs. Underfitting",
-      "question": "Describe the difference between overfitting and underfitting in model training.",
-      "correct_answer": "Overfitting occurs when a model learns too much from the training data, capturing noise; underfitting happens when a model fails to learn the underlying pattern due to its simplicity."
+      "topic": "Artificial Intelligence & Machine Learning",
+      "subtopic": "Evaluation Metrics",
+      "question": "What is the purpose of cross-validation in model evaluation?",
+      "correct_answer": "Cross-validation is used to assess how the results of a statistical analysis will generalize to an independent dataset by partitioning the data into subsets.",
+      "explanation": "It helps in understanding the model's effectiveness and avoiding overfitting by using different subsets for training and validation."
     },
     {
-      "id": "19",
-      "type": "multiple_choice",
-      "difficulty": "Hard",
-      "topic": "Deep Learning",
-      "subtopic": "Transfer Learning",
-      "question": "What is transfer learning primarily used for?",
-      "options": [
-        "To improve performance by applying knowledge from one task to a different but related task",
-        "To train networks from scratch every time",
-        "To swap weights between two models",
-        "To enhance the input data variable"
-      ],
-      "correct_answer": "To improve performance by applying knowledge from one task to a different but related task",
-      "explanation": "Transfer learning allows leveraging pre-trained models on new tasks, enhancing development speed and performance."
+      "id": "q16",
+      "type": "short_answer",
+      "difficulty": "Medium",
+      "topic": "Artificial Intelligence & Machine Learning",
+      "subtopic": "Natural Language Processing",
+      "question": "What is 'tokenization' in NLP?",
+      "correct_answer": "Tokenization is the process of breaking down text into smaller units, called tokens, which can be words, phrases, or symbols.",
+      "explanation": "It is a fundamental step in NLP for preparing text data for analysis and model training."
     },
     {
-      "id": "20",
+      "id": "q17",
       "type": "multiple_choice",
       "difficulty": "Medium",
-      "topic": "Computer Vision",
-      "subtopic": "Applications of Computer Vision",
-      "question": "Which of the following is NOT an application of computer vision?",
+      "topic": "Artificial Intelligence & Machine Learning",
+      "subtopic": "Reinforcement Learning",
+      "question": "Which of the following best describes 'exploration' and 'exploitation' in reinforcement learning?",
       "options": [
-        "Facial recognition",
-        "Autonomous vehicles",
-        "Speech recognition",
-        "Medical imaging"
+        "Trying new actions vs. using known actions",
+        "Learning from past experiences vs. adapting to new environments",
+        "Maximizing rewards vs. minimizing penalties",
+        "Choosing random actions vs. deterministic actions"
       ],
-      "correct_answer": "Speech recognition",
-      "explanation": "Speech recognition is a domain of Natural Language Processing, focusing on audio interpretation rather than visual data."
+      "correct_answer": "A",
+      "explanation": "Exploration refers to trying new actions to discover their rewards, while exploitation involves using known actions that yield the highest rewards."
     },
     {
-      "id": "21",
+      "id": "q18",
       "type": "multiple_choice",
-      "difficulty": "Hard",
-      "topic": "Natural Language Processing (NLP)",
-      "subtopic": "Language Models",
-      "question": "What does an N-gram model in NLP refer to?",
+      "difficulty": "Medium",
+      "topic": "Artificial Intelligence & Machine Learning",
+      "subtopic": "Gradient Descent",
+      "question": "Which variant of gradient descent uses a small batch of training examples to update the model parameters?",
       "options": [
-        "A type of neural network architecture",
-        "A statistical language model predicting the next item in a sequence based on the previous N items",
-        "A method to encode categorical data",
-        "A technique for machine translation"
+        "Stochastic Gradient Descent",
+        "Batch Gradient Descent",
+        "Mini-Batch Gradient Descent",
+        "Momentum Gradient Descent"
       ],
-      "correct_answer": "A statistical language model predicting the next item in a sequence based on the previous N items",
-      "explanation": "N-gram models use the frequency of N contiguous words to predict the likelihood of sequences in text."
+      "correct_answer": "C",
+      "explanation": "Mini-Batch Gradient Descent updates the model parameters using a small random subset of the training data, balancing efficiency and convergence speed."
     },
     {
-      "id": "22",
+      "id": "q19",
+      "type": "multiple_choice",
+      "difficulty": "Medium",
+      "topic": "Artificial Intelligence & Machine Learning",
+      "subtopic": "Ensemble Methods",
+      "question": "What is the primary advantage of using ensemble methods?",
+      "options": [
+        "Simplicity",
+        "Speed",
+        "Better accuracy",
+        "Less data required"
+      ],
+      "correct_answer": "C",
+      "explanation": "Ensemble methods combine multiple models to improve accuracy and robustness compared to individual models."
+    },
+    {
+      "id": "q20",
+      "type": "multiple_choice",
+      "difficulty": "Medium",
+      "topic": "Artificial Intelligence & Machine Learning",
+      "subtopic": "Data Ethics",
+      "question": "What is an important ethical concern in the use of AI?",
+      "options": [
+        "Data privacy",
+        "Model accuracy",
+        "Computational efficiency",
+        "User interface design"
+      ],
+      "correct_answer": "A",
+      "explanation": "Data privacy is a significant ethical concern, as AI systems often rely on large amounts of personal data."
+    },
+    {
+      "id": "q21",
       "type": "true_false",
-      "difficulty": "Hard",
-      "topic": "Deep Learning",
-      "subtopic": "Applications of Deep Learning",
-      "question": "Deep learning has been successfully applied in areas such as healthcare, finance, and autonomous driving.",
-      "correct_answer": "True"
+      "difficulty": "Medium",
+      "topic": "Artificial Intelligence & Machine Learning",
+      "subtopic": "General Concepts",
+      "question": "True or False: All machine learning algorithms require labeled data.",
+      "correct_answer": "False",
+      "explanation": "Not all ML algorithms require labeled data; unsupervised learning algorithms work with unlabeled data."
     },
     {
-      "id": "23",
-      "type": "multiple_choice",
-      "difficulty": "Hard",
-      "topic": "Machine Learning Fundamentals",
-      "subtopic": "Model Evaluation Metrics",
-      "question": "Which metric is used to specifically evaluate false positives in a model?",
-      "options": [
-        "Accuracy",
-        "Precision",
-        "Recall",
-        "F1 Score"
-      ],
-      "correct_answer": "Precision",
-      "explanation": "Precision measures the proportion of true positives relative to the total predicted positives, focusing on false positives."
+      "id": "q22",
+      "type": "true_false",
+      "difficulty": "Medium",
+      "topic": "Artificial Intelligence & Machine Learning",
+      "subtopic": "Support Vector Machines",
+      "question": "True or False: Support Vector Machines can only be used for binary classification tasks.",
+      "correct_answer": "False",
+      "explanation": "SVMs can be extended to handle multi-class classification tasks using techniques like one-vs-all or one-vs-one."
     },
     {
-      "id": "24",
+      "id": "q23",
       "type": "short_answer",
       "difficulty": "Medium",
-      "topic": "Ethics in AI",
-      "subtopic": "Bias and Fairness",
-      "question": "Explain one way to mitigate bias in AI systems.",
-      "correct_answer": "One way to mitigate bias is to ensure diverse and representative datasets are used during the training phase to reflect various demographics accurately."
+      "topic": "Artificial Intelligence & Machine Learning",
+      "subtopic": "Deep Learning",
+      "question": "What is 'transfer learning' in the context of deep learning?",
+      "correct_answer": "Transfer learning is the practice of taking a pre-trained model on a large dataset and fine-tuning it for a specific task.",
+      "explanation": "It allows leveraging existing models to save time and resources when training new models on similar tasks."
     },
     {
-      "id": "25",
-      "type": "true_false",
-      "difficulty": "Easy",
-      "topic": "Introduction to AI and ML",
-      "subtopic": "Definition of AI",
-      "question": "AI systems can only operate without any human input.",
-      "correct_answer": "False"
+      "id": "q24",
+      "type": "short_answer",
+      "difficulty": "Medium",
+      "topic": "Artificial Intelligence & Machine Learning",
+      "subtopic": "Algorithm Optimization",
+      "question": "What is the purpose of hyperparameter tuning in machine learning?",
+      "correct_answer": "Hyperparameter tuning aims to optimize the parameters that govern the training process to improve model performance.",
+      "explanation": "These parameters need to be set before training and can greatly impact the outcome of the model."
+    },
+    {
+      "id": "q25",
+      "type": "short_answer",
+      "difficulty": "Medium",
+      "topic": "Artificial Intelligence & Machine Learning",
+      "subtopic": "Data Handling",
+      "question": "Explain the concept of 'data leakage' in machine learning.",
+      "correct_answer": "Data leakage occurs when information from outside the training dataset is used to create the model, leading to overly optimistic performance estimates.",
+      "explanation": "It undermines the validity of model evaluation as it causes the model to learn from data that it shouldn't have been exposed to."
     }
   ]
 }
-```

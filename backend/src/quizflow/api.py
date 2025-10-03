@@ -255,7 +255,245 @@ async def get_quiz_results(session_id: str):
     except Exception as e:
         print(f"Error loading general results file: {e}")
     
-    raise HTTPException(status_code=404, detail="Results not found")
+        raise HTTPException(status_code=404, detail="Results not found")
+
+
+# === Enhanced Agent Endpoints ===
+
+@app.post("/get-hints")
+async def get_hints(request: dict):
+    """Get contextual hints and learning resources for a question"""
+    try:
+        question = request.get("question", "")
+        user_answer = request.get("user_answer", "")
+        topic = request.get("topic", "")
+        difficulty = request.get("difficulty", "Medium")
+        
+        hints = crew_instance.get_learning_hints(question, user_answer, topic, difficulty)
+        return hints
+        
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Failed to get hints: {str(e)}")
+
+
+@app.get("/learning-resources/{topic}")
+async def get_learning_resources(topic: str, question_type: str = "general"):
+    """Get comprehensive learning resources for a topic"""
+    try:
+        resources = crew_instance.get_learning_resources(topic, question_type)
+        return resources
+        
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Failed to get learning resources: {str(e)}")
+
+
+@app.post("/track-progress")
+async def track_progress(request: dict):
+    """Track user progress and achievements"""
+    try:
+        user_id = request.get("user_id", "")
+        action = request.get("action", "")
+        data = request.get("data", {})
+        
+        if not user_id or not action:
+            raise HTTPException(status_code=400, detail="user_id and action are required")
+        
+        result = crew_instance.track_user_progress(user_id, action, data)
+        return result
+        
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Failed to track progress: {str(e)}")
+
+
+@app.get("/user-progress/{user_id}")
+async def get_user_progress(user_id: str):
+    """Get comprehensive user progress data"""
+    try:
+        progress = crew_instance.track_user_progress(user_id, "get_user_progress")
+        return progress
+        
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Failed to get user progress: {str(e)}")
+
+
+@app.get("/leaderboard")
+async def get_leaderboard(limit: int = 10):
+    """Get leaderboard data"""
+    try:
+        leaderboard = crew_instance.track_user_progress("", "get_leaderboard", {"limit": limit})
+        return leaderboard
+        
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Failed to get leaderboard: {str(e)}")
+
+
+@app.post("/send-notification")
+async def send_notification(request: dict):
+    """Send notifications via various channels"""
+    try:
+        notification_type = request.get("type", "quiz_reminder")
+        data = request.get("data", {})
+        
+        result = crew_instance.send_notification(notification_type, data)
+        return result
+        
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Failed to send notification: {str(e)}")
+
+
+@app.post("/schedule-reminder")
+async def schedule_reminder(request: dict):
+    """Schedule quiz reminders and study sessions"""
+    try:
+        action = request.get("action", "schedule_daily_reminder")
+        data = request.get("data", {})
+        
+        from .tools.notification_tools import NotificationSchedulerTool
+        scheduler = NotificationSchedulerTool()
+        result = scheduler._run(action, data)
+        return result
+        
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Failed to schedule reminder: {str(e)}")
+
+
+@app.get("/analytics/{report_type}")
+async def get_analytics(report_type: str, days: int = 30, user_id: str = None):
+    """Generate comprehensive analytics reports"""
+    try:
+        data = {"days": days}
+        if user_id:
+            data["user_id"] = user_id
+            
+        analytics = crew_instance.generate_analytics_report(report_type, data)
+        return analytics
+        
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Failed to generate analytics: {str(e)}")
+
+
+@app.get("/engagement-report")
+async def get_engagement_report(days: int = 30):
+    """Get user engagement analytics report"""
+    try:
+        from .tools.analytics_tools import GoogleAnalyticsTool
+        ga_tool = GoogleAnalyticsTool()
+        report = ga_tool._run("get_engagement_report", {"days": days})
+        return report
+        
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Failed to get engagement report: {str(e)}")
+
+
+@app.get("/quiz-performance-report")
+async def get_quiz_performance_report(days: int = 30):
+    """Get quiz-specific performance analytics"""
+    try:
+        from .tools.analytics_tools import GoogleAnalyticsTool
+        ga_tool = GoogleAnalyticsTool()
+        report = ga_tool._run("get_quiz_performance", {"days": days})
+        return report
+        
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Failed to get quiz performance report: {str(e)}")
+
+
+@app.get("/learning-insights")
+async def get_learning_insights(days: int = 30):
+    """Get comprehensive learning analytics and insights"""
+    try:
+        from .tools.analytics_tools import GoogleAnalyticsTool
+        ga_tool = GoogleAnalyticsTool()
+        insights = ga_tool._run("get_learning_insights", {"days": days})
+        return insights
+        
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Failed to get learning insights: {str(e)}")
+
+
+@app.post("/badge-check")
+async def check_and_award_badges(request: dict):
+    """Check and award badges based on performance"""
+    try:
+        user_id = request.get("user_id", "")
+        quiz_result = request.get("quiz_result", {})
+        
+        if not user_id:
+            raise HTTPException(status_code=400, detail="user_id is required")
+            
+        # This would be handled automatically by the progress tracker
+        # but can also be triggered manually
+        from .tools.firebase_tools import FirebaseProgressTracker
+        tracker = FirebaseProgressTracker()
+        result = tracker._check_and_award_badges(user_id, quiz_result)
+        return result
+        
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Failed to check badges: {str(e)}")
+
+
+# === Health and Status Endpoints ===
+
+@app.get("/agent-status")
+async def get_agent_status():
+    """Get status of all agents and their tools"""
+    try:
+        status = {
+            "notification_agent": {
+                "status": "active",
+                "tools": ["GoogleCalendarTool", "TwilioNotificationTool", "NotificationSchedulerTool"],
+                "capabilities": ["calendar reminders", "SMS/WhatsApp", "scheduled notifications", "proactive study companion"]
+            }
+        }
+        
+        return {
+            "system_status": "operational",
+            "total_agents": len(status),
+            "agents": status,
+            "api_version": "2.0.0",
+            "features": [
+                "AI-powered question generation",
+                "Intelligent answer evaluation", 
+                "Contextual learning resources",
+                "Progress tracking & achievements",
+                "Multi-channel notifications",
+                "Comprehensive analytics"
+            ]
+        }
+        
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Failed to get agent status: {str(e)}")
+
+
+@app.get("/api-capabilities")
+async def get_api_capabilities():
+    """Get comprehensive list of API capabilities and endpoints"""
+    return {
+        "core_quiz_features": {
+            "endpoints": ["/subjects", "/generate-quiz", "/quiz/{session_id}", "/submit-answers", "/results/{session_id}"],
+            "description": "Core quiz generation, management, and evaluation"
+        },
+        "ai_enhanced_features": {
+            "endpoints": ["/get-hints", "/learning-resources/{topic}"],
+            "description": "AI-powered hints, explanations, and learning resources"
+        },
+        "progress_tracking": {
+            "endpoints": ["/track-progress", "/user-progress/{user_id}", "/leaderboard", "/badge-check"],
+            "description": "User progress tracking, achievements, and gamification"
+        },
+        "notifications": {
+            "endpoints": ["/send-notification", "/schedule-reminder"],
+            "description": "Multi-channel notifications and reminder scheduling"
+        },
+        "analytics": {
+            "endpoints": ["/analytics/{report_type}", "/engagement-report", "/quiz-performance-report", "/learning-insights"],
+            "description": "Comprehensive analytics and learning insights"
+        },
+        "system_info": {
+            "endpoints": ["/agent-status", "/api-capabilities", "/"],
+            "description": "System status and capability information"
+        }
+    }
 
 def start_server():
     """Start the production server"""

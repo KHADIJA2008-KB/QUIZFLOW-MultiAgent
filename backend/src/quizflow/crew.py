@@ -4,9 +4,15 @@ from pathlib import Path
 import json
 from typing import Dict, Any, Optional
 
+# Import all tools
+from .tools.notification_tools import GoogleCalendarTool, TwilioNotificationTool, NotificationSchedulerTool
+from .tools.llm_tools import LLMQuestionGeneratorTool, LLMAnswerEvaluatorTool
+from .tools.hint_tools import WikipediaHintTool, StackOverflowHintTool, LearningResourcesTool, HintGeneratorTool
+from .tools.analytics_tools import GoogleAnalyticsTool, LearningAnalyticsTool
+
 @CrewBase
 class QuizflowCrew:
-    """QuizFlow multi-agent crew for automated quiz generation and evaluation"""
+    """QuizFlow notification-focused crew for proactive study companion"""
 
     def __init__(self):
         # Ensure data directory exists
@@ -16,75 +22,50 @@ class QuizflowCrew:
     # === Agents ===
 
     @agent
-    def quiz_topic_planner(self) -> Agent:
-        """Agent responsible for planning quiz topics and subtopics"""
+    def notification_agent(self) -> Agent:
+        """Agent for managing notifications and reminders"""
         return Agent(
-            config=self.agents_config['quiz_topic_planner'],
-            verbose=True
-        )
-
-    @agent
-    def quiz_maker(self) -> Agent:
-        """Agent responsible for generating quiz questions"""
-        return Agent(
-            config=self.agents_config['quiz_maker'],
-            verbose=True
-        )
-
-    @agent
-    def quiz_checker(self) -> Agent:
-        """Agent responsible for evaluating quiz answers"""
-        return Agent(
-            config=self.agents_config['quiz_checker'],
+            config=self.agents_config['notification_agent'],
+            tools=[
+                GoogleCalendarTool(),
+                TwilioNotificationTool(),
+                NotificationSchedulerTool()
+            ],
             verbose=True
         )
 
     # === Tasks ===
 
     @task
-    def plan_topics_task(self) -> Task:
-        """Task to plan topics and subtopics for the quiz"""
+    def schedule_study_reminder_task(self) -> Task:
+        """Task to schedule proactive study reminders"""
         return Task(
-            config=self.tasks_config['plan_topics_task'],
-            agent=self.quiz_topic_planner(),
-            output_file='data/topics.json'
+            config=self.tasks_config['schedule_study_reminder_task'],
+            agent=self.notification_agent(),
+            output_file='data/reminder_scheduled.json'
         )
 
     @task
-    def generate_quiz_task(self) -> Task:
-        """Task to generate quiz questions based on planned topics"""
+    def send_achievement_notification_task(self) -> Task:
+        """Task to send achievement notifications"""
         return Task(
-            config=self.tasks_config['generate_quiz_task'],
-            agent=self.quiz_maker(),
-            context=[self.plan_topics_task()],
-            output_file='data/quiz.json'
-        )
-
-    @task
-    def evaluate_quiz_task(self) -> Task:
-        """Task to evaluate quiz answers and provide results"""
-        return Task(
-            config=self.tasks_config['evaluate_quiz_task'],
-            agent=self.quiz_checker(),
-            context=[self.generate_quiz_task()],
-            output_file='data/results.json'
+            config=self.tasks_config['send_achievement_notification_task'],
+            agent=self.notification_agent(),
+            output_file='data/notification_sent.json'
         )
 
     # === Crew ===
 
     @crew
     def crew(self) -> Crew:
-        """Creates the QuizFlow crew with sequential process"""
+        """Creates the notification-focused QuizFlow crew"""
         return Crew(
             agents=[
-                self.quiz_topic_planner(),
-                self.quiz_maker(),
-                self.quiz_checker()
+                self.notification_agent()
             ],
             tasks=[
-                self.plan_topics_task(),
-                self.generate_quiz_task(),
-                self.evaluate_quiz_task()
+                self.schedule_study_reminder_task(),
+                self.send_achievement_notification_task()
             ],
             process=Process.sequential,
             verbose=True,
@@ -93,152 +74,226 @@ class QuizflowCrew:
 
     # === Utility Methods ===
 
-    def generate_quiz_for_subject(self, subject: str) -> Dict[str, Any]:
-        """Generate a complete quiz for a given subject"""
-        print(f"🚀 Starting quiz generation for subject: {subject}")
-        
-        # Run the crew with subject input
-        inputs = {
-            'subject': subject,
-            'current_year': '2025'
-        }
-        
+    def schedule_study_reminder(self, user_data: Dict[str, Any]) -> Dict[str, Any]:
+        """Schedule a study reminder for a user"""
         try:
-            result = self.crew().kickoff(inputs=inputs)
+            crew_instance = self.crew()
+            result = crew_instance.kickoff(inputs={
+                "user_email": user_data.get("email"),
+                "phone_number": user_data.get("phone_number"),
+                "subject": user_data.get("subject", "Study Session"),
+                "reminder_time": user_data.get("reminder_time"),
+                "preferences": user_data.get("preferences", {})
+            })
             
-            # Load generated files and clean JSON
-            topics_file = self.data_dir / "topics.json"
+            return {
+                "success": True,
+                "message": "Study reminder scheduled successfully",
+                "result": result
+            }
+            
+        except Exception as e:
+            return {
+                "success": False,
+                "error": str(e)
+            }
+
+    def send_achievement_notification(self, achievement_data: Dict[str, Any]) -> Dict[str, Any]:
+        """Send achievement notification to user"""
+        try:
+            crew_instance = self.crew()
+            result = crew_instance.kickoff(inputs={
+                "user_name": achievement_data.get("user_name"),
+                "phone_number": achievement_data.get("phone_number"),
+                "achievement": achievement_data.get("achievement"),
+                "badge_name": achievement_data.get("badge_name"),
+                "method": achievement_data.get("method", "sms")
+            })
+            
+            return {
+                "success": True,
+                "message": "Achievement notification sent successfully",
+                "result": result
+            }
+            
+        except Exception as e:
+            return {
+                "success": False,
+                "error": str(e)
+            }
+
+    def send_immediate_notification(self, notification_data: Dict[str, Any]) -> Dict[str, Any]:
+        """Send immediate notification via SMS/WhatsApp"""
+        try:
+            scheduler = NotificationSchedulerTool()
+            return scheduler._run("send_immediate_notification", notification_data)
+        except Exception as e:
+            return {
+                "success": False,
+                "error": str(e)
+            }
+
+    def schedule_daily_reminder(self, user_data: Dict[str, Any]) -> Dict[str, Any]:
+        """Schedule daily study reminders"""
+        try:
+            scheduler = NotificationSchedulerTool()
+            return scheduler._run("schedule_daily_reminder", user_data)
+        except Exception as e:
+            return {
+                "success": False,
+                "error": str(e)
+            }
+
+    def schedule_weekly_summary(self, user_data: Dict[str, Any]) -> Dict[str, Any]:
+        """Schedule weekly progress summary"""
+        try:
+            scheduler = NotificationSchedulerTool()
+            return scheduler._run("schedule_weekly_summary", user_data)
+        except Exception as e:
+            return {
+                "success": False,
+                "error": str(e)
+            }
+
+    def update_notification_preferences(self, preferences: Dict[str, Any]) -> Dict[str, Any]:
+        """Update user notification preferences"""
+        try:
+            scheduler = NotificationSchedulerTool()
+            return scheduler._run("update_preferences", preferences)
+        except Exception as e:
+            return {
+                "success": False,
+                "error": str(e)
+            }
+
+    # === Quiz Generation and Evaluation Methods ===
+
+    def generate_quiz_for_subject(self, subject: str, difficulty: str = "Medium", num_questions: int = 25) -> Dict[str, Any]:
+        """Generate a quiz for a given subject"""
+        try:
+            generator = LLMQuestionGeneratorTool()
+            quiz_data = generator._run(
+                topic=subject,
+                difficulty=difficulty,
+                num_questions=num_questions,
+                include_coding=subject.lower() in ["python programming", "javascript programming", "computer science"]
+            )
+            
+            if "error" in quiz_data:
+                return {"error": quiz_data["error"]}
+            
+            # Save quiz data to file
             quiz_file = self.data_dir / "quiz.json"
+            with open(quiz_file, 'w') as f:
+                json.dump(quiz_data, f, indent=2)
             
-            quiz_data = {}
-            
-            if topics_file.exists():
-                quiz_data['topics'] = self._load_and_clean_json(topics_file)
-            
-            if quiz_file.exists():
-                quiz_data['quiz'] = self._load_and_clean_json(quiz_file)
-            
-            print(f"✅ Quiz generation completed for {subject}")
-            return quiz_data
+            return {"quiz": quiz_data}
             
         except Exception as e:
-            print(f"❌ Error generating quiz: {e}")
-            raise
+            return {"error": f"Quiz generation failed: {str(e)}"}
 
-    def _load_and_clean_json(self, file_path: Path) -> Dict[str, Any]:
-        """Load JSON file and clean markdown formatting if present"""
+    def evaluate_user_answers(self, user_answers: Dict[str, Any], quiz_data: Dict[str, Any]) -> Dict[str, Any]:
+        """Evaluate user answers and provide detailed feedback"""
         try:
-            with open(file_path, 'r') as f:
-                content = f.read().strip()
+            evaluator = LLMAnswerEvaluatorTool()
+            results = evaluator._run(user_answers, quiz_data)
             
-            # Remove markdown code blocks if present
-            if content.startswith('```json'):
-                content = content[7:]  # Remove ```json
-            if content.startswith('```'):
-                content = content[3:]  # Remove ```
-            if content.endswith('```'):
-                content = content[:-3]  # Remove trailing ```
+            if "error" in results:
+                return {"error": results["error"]}
             
-            content = content.strip()
-            
-            # Parse JSON
-            return json.loads(content)
-            
-        except Exception as e:
-            print(f"❌ Error loading JSON from {file_path}: {e}")
-            print(f"File content preview: {content[:200] if 'content' in locals() else 'Could not read file'}")
-            raise
-
-    def evaluate_user_answers(self, user_answers: Dict[str, Any], quiz_data: Dict[str, Any] = None) -> Dict[str, Any]:
-        """Evaluate user answers against the correct answers"""
-        print("🔍 Starting quiz evaluation...")
-        
-        try:
-            # Use provided quiz data or fallback to reading from file
-            if quiz_data is None:
-                # Fallback to reading the quiz file
-                quiz_file = self.data_dir / "quiz.json"
-                
-                if not quiz_file.exists():
-                    raise FileNotFoundError("No quiz file found for evaluation")
-                
-                with open(quiz_file, 'r') as f:
-                    quiz_data = json.load(f)
-            
-            # Create a simple evaluation (this would normally be done by the quiz_checker agent)
-            results = self._simple_evaluation(quiz_data, user_answers)
-            
-            # Save results - both general and session-specific
-            results_file = self.data_dir / "results.json"
+            # Save results to file
+            quiz_id = user_answers.get("quiz_id", "unknown")
+            results_file = self.data_dir / f"results_{quiz_id}.json"
             with open(results_file, 'w') as f:
                 json.dump(results, f, indent=2)
             
-            # Save session-specific results
-            quiz_id = user_answers.get('quiz_id', 'unknown')
-            session_results_file = self.data_dir / f"results_{quiz_id}.json"
-            with open(session_results_file, 'w') as f:
-                json.dump(results, f, indent=2)
-            
-            print("✅ Quiz evaluation completed")
             return results
             
         except Exception as e:
-            print(f"❌ Error evaluating quiz: {e}")
-            raise
+            return {"error": f"Answer evaluation failed: {str(e)}"}
 
-    def _simple_evaluation(self, quiz_data: Dict[str, Any], user_answers: Dict[str, Any]) -> Dict[str, Any]:
-        """Simple evaluation logic (placeholder for agent-based evaluation)"""
-        # Handle both formats: direct questions array or nested quiz.questions
-        if 'quiz' in quiz_data and 'questions' in quiz_data['quiz']:
-            questions = quiz_data['quiz']['questions']
-        else:
-            questions = quiz_data.get('questions', [])
-        
-        total_questions = len(questions)
-        correct_answers = 0
-        question_results = []
-        
-        for i, question in enumerate(questions):
-            question_id = question.get('id', str(i))
-            user_answer = user_answers.get(question_id, "")
-            correct_answer = question.get('correct_answer', "")
+    def get_learning_hints(self, question: str, user_answer: str, topic: str, difficulty: str) -> Dict[str, Any]:
+        """Get contextual hints and learning resources for a question"""
+        try:
+            hint_generator = HintGeneratorTool()
+            hints = hint_generator._run(
+                question=question,
+                correct_answer="",  # Would need to be passed from the quiz data
+                user_answer=user_answer,
+                difficulty=difficulty,
+                topic=topic
+            )
+            return hints
             
-            is_correct = False
-            if question['type'] in ['multiple_choice', 'true_false']:
-                is_correct = user_answer.lower().strip() == correct_answer.lower().strip()
-            else:  # short_answer
-                # Simple keyword matching for short answers
-                is_correct = any(word in user_answer.lower() for word in correct_answer.lower().split())
+        except Exception as e:
+            return {"error": f"Failed to get hints: {str(e)}"}
+
+    def get_learning_resources(self, topic: str, question_type: str = "general") -> Dict[str, Any]:
+        """Get comprehensive learning resources for a topic"""
+        try:
+            resources_tool = LearningResourcesTool()
+            resources = resources_tool._run(
+                topic=topic,
+                question_type=question_type,
+                programming_tags=["python", "javascript"] if "programming" in topic.lower() else None
+            )
+            return resources
             
-            if is_correct:
-                correct_answers += 1
+        except Exception as e:
+            return {"error": f"Failed to get learning resources: {str(e)}"}
+
+    def track_user_progress(self, user_id: str, action: str, data: Dict[str, Any] = None) -> Dict[str, Any]:
+        """Track user progress and achievements"""
+        try:
+            # In a real implementation, this would integrate with Firebase or a database
+            # For now, we'll simulate progress tracking
             
-            question_results.append({
-                "question_id": question_id,
-                "user_answer": user_answer,
-                "correct_answer": correct_answer,
-                "is_correct": is_correct,
-                "points_awarded": 1 if is_correct else 0,
-                "feedback": f"{'Correct!' if is_correct else 'Incorrect.'} The correct answer is: {correct_answer}"
+            if action == "get_user_progress":
+                return {
+                    "user_id": user_id,
+                    "total_quizzes": data.get("total_quizzes", 0),
+                    "average_score": data.get("average_score", 0),
+                    "subjects_studied": data.get("subjects_studied", []),
+                    "badges_earned": data.get("badges_earned", []),
+                    "streak_days": data.get("streak_days", 0),
+                    "last_activity": data.get("last_activity", "")
+                }
+            elif action == "get_leaderboard":
+                limit = data.get("limit", 10) if data else 10
+                return {
+                    "leaderboard": [
+                        {"user_id": f"user_{i}", "score": 100 - i*5, "rank": i+1}
+                        for i in range(limit)
+                    ]
+                }
+            else:
+                return {
+                    "success": True,
+                    "action": action,
+                    "user_id": user_id,
+                    "data": data
+                }
+                
+        except Exception as e:
+            return {"error": f"Progress tracking failed: {str(e)}"}
+
+    def send_notification(self, notification_type: str, data: Dict[str, Any]) -> Dict[str, Any]:
+        """Send notifications via various channels"""
+        try:
+            scheduler = NotificationSchedulerTool()
+            return scheduler._run("send_immediate_notification", {
+                "type": notification_type,
+                **data
             })
-        
-        percentage = (correct_answers / total_questions * 100) if total_questions > 0 else 0
-        
-        return {
-            "quiz_results": {
-                "user_id": user_answers.get('user_id', 'anonymous'),
-                "quiz_id": quiz_data.get('quiz_metadata', {}).get('subject', 'unknown'),
-                "timestamp": "2025-01-01T12:00:00Z",  # Would use actual timestamp
-                "overall_score": {
-                    "points_earned": correct_answers,
-                    "total_points": total_questions,
-                    "percentage": percentage,
-                    "grade": "A" if percentage >= 90 else "B" if percentage >= 80 else "C" if percentage >= 70 else "D" if percentage >= 60 else "F"
-                },
-                "question_results": question_results,
-                "recommendations": [
-                    f"You scored {percentage:.1f}%. Keep practicing to improve!",
-                    "Review the questions you got wrong and study those topics more."
-                ]
-            }
-        }
+            
+        except Exception as e:
+            return {"error": f"Notification sending failed: {str(e)}"}
+
+    def generate_analytics_report(self, report_type: str, data: Dict[str, Any]) -> Dict[str, Any]:
+        """Generate comprehensive analytics reports"""
+        try:
+            analytics_tool = LearningAnalyticsTool()
+            return analytics_tool._run(report_type, data)
+            
+        except Exception as e:
+            return {"error": f"Analytics report generation failed: {str(e)}"}

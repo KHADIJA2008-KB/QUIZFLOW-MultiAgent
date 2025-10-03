@@ -2,6 +2,7 @@
 .env
 *.env
 !env.example
+!env.template
 
 # Python
 __pycache__/
@@ -69,10 +70,6 @@ pids/
 # Coverage directory used by tools like istanbul
 coverage/
 
-# Build outputs
-dist/
-build/
-
 # Temporary files
 *.tmp
 *.temp
@@ -81,3 +78,15 @@ build/
 *.db
 *.sqlite
 *.sqlite3
+
+# Firebase service account files
+*-firebase-sa.json
+firebase-service-account.json
+service-account.json
+firebase-adminsdk-*.json
+
+# Additional security files
+*.pem
+*.key
+*.crt
+secrets/
