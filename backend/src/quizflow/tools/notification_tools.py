@@ -26,12 +26,11 @@ class GoogleCalendarTool(BaseTool):
     
     def __init__(self):
         super().__init__()
-        self._service = None
-        self._initialize_calendar_api()
+        # Don't initialize service in __init__ to avoid Pydantic issues
     
-    @property
-    def service(self):
-        return self._service
+    def _get_service(self):
+        """Get Google Calendar service instance"""
+        return self._initialize_calendar_api()
     
     def _initialize_calendar_api(self):
         """Initialize Google Calendar API service"""
@@ -59,35 +58,38 @@ class GoogleCalendarTool(BaseTool):
                 with open(token_path, 'w') as token:
                     token.write(creds.to_json())
             
-            self._service = build('calendar', 'v3', credentials=creds)
+            service = build('calendar', 'v3', credentials=creds)
             print("✅ Google Calendar API initialized successfully")
+            return service
             
         except Exception as e:
             print(f"❌ Google Calendar initialization error: {e}")
             print("Note: Calendar features will be disabled without proper configuration")
+            return None
     
     def _run(self, action: str, event_data: Dict[str, Any] = None) -> Dict[str, Any]:
         """Execute Google Calendar operations"""
         
-        if not self.service:
+        service = self._get_service()
+        if not service:
             return {"error": "Google Calendar not initialized. Check configuration."}
         
         try:
             if action == "schedule_quiz_reminder":
-                return self._schedule_quiz_reminder(event_data)
+                return self._schedule_quiz_reminder(service, event_data)
             elif action == "schedule_study_session":
-                return self._schedule_study_session(event_data)
+                return self._schedule_study_session(service, event_data)
             elif action == "get_upcoming_events":
-                return self._get_upcoming_events(event_data.get("days", 7))
+                return self._get_upcoming_events(service, event_data.get("days", 7))
             elif action == "cancel_reminder":
-                return self._cancel_reminder(event_data.get("event_id"))
+                return self._cancel_reminder(service, event_data.get("event_id"))
             else:
                 return {"error": f"Unknown action: {action}"}
                 
         except Exception as e:
             return {"error": f"Calendar operation failed: {e}"}
     
-    def _schedule_quiz_reminder(self, event_data: Dict[str, Any]) -> Dict[str, Any]:
+    def _schedule_quiz_reminder(self, service, event_data: Dict[str, Any]) -> Dict[str, Any]:
         """Schedule a quiz reminder in Google Calendar"""
         try:
             # Parse reminder time
@@ -133,7 +135,7 @@ class GoogleCalendarTool(BaseTool):
             }
             
             # Insert event
-            created_event = self.service.events().insert(
+            created_event = service.events().insert(
                 calendarId='primary', 
                 body=event
             ).execute()
@@ -149,7 +151,7 @@ class GoogleCalendarTool(BaseTool):
         except Exception as e:
             return {"error": f"Failed to schedule quiz reminder: {e}"}
     
-    def _schedule_study_session(self, event_data: Dict[str, Any]) -> Dict[str, Any]:
+    def _schedule_study_session(self, service, event_data: Dict[str, Any]) -> Dict[str, Any]:
         """Schedule a study session in Google Calendar"""
         try:
             start_time = event_data.get("start_time")
@@ -189,7 +191,7 @@ class GoogleCalendarTool(BaseTool):
                 },
             }
             
-            created_event = self.service.events().insert(
+            created_event = service.events().insert(
                 calendarId='primary', 
                 body=event
             ).execute()
@@ -206,13 +208,13 @@ class GoogleCalendarTool(BaseTool):
         except Exception as e:
             return {"error": f"Failed to schedule study session: {e}"}
     
-    def _get_upcoming_events(self, days: int = 7) -> Dict[str, Any]:
+    def _get_upcoming_events(self, service, days: int = 7) -> Dict[str, Any]:
         """Get upcoming QuizFlow events from calendar"""
         try:
             now = datetime.utcnow()
             time_max = now + timedelta(days=days)
             
-            events_result = self.service.events().list(
+            events_result = service.events().list(
                 calendarId='primary',
                 timeMin=now.isoformat() + 'Z',
                 timeMax=time_max.isoformat() + 'Z',
@@ -244,10 +246,10 @@ class GoogleCalendarTool(BaseTool):
         except Exception as e:
             return {"error": f"Failed to get upcoming events: {e}"}
     
-    def _cancel_reminder(self, event_id: str) -> Dict[str, Any]:
+    def _cancel_reminder(self, service, event_id: str) -> Dict[str, Any]:
         """Cancel a scheduled reminder"""
         try:
-            self.service.events().delete(
+            service.events().delete(
                 calendarId='primary',
                 eventId=event_id
             ).execute()
@@ -269,12 +271,11 @@ class TwilioNotificationTool(BaseTool):
     
     def __init__(self):
         super().__init__()
-        self._client = None
-        self._initialize_twilio()
+        # Don't initialize client in __init__ to avoid Pydantic issues
     
-    @property
-    def client(self):
-        return self._client
+    def _get_client(self):
+        """Get Twilio client instance"""
+        return self._initialize_twilio()
     
     def _initialize_twilio(self):
         """Initialize Twilio client"""
@@ -283,39 +284,43 @@ class TwilioNotificationTool(BaseTool):
             auth_token = os.getenv('TWILIO_AUTH_TOKEN')
             
             if account_sid and auth_token:
-                self._client = TwilioClient(account_sid, auth_token)
+                client = TwilioClient(account_sid, auth_token)
                 print("✅ Twilio client initialized successfully")
+                return client
             else:
                 print("❌ Twilio credentials not found. SMS/WhatsApp features will be disabled.")
+                return None
                 
         except Exception as e:
             print(f"❌ Twilio initialization error: {e}")
+            return None
     
     def _run(self, action: str, message_data: Dict[str, Any] = None) -> Dict[str, Any]:
         """Execute Twilio operations"""
         
-        if not self.client:
+        client = self._get_client()
+        if not client:
             return {"error": "Twilio not initialized. Check configuration."}
         
         try:
             if action == "send_sms":
-                return self._send_sms(message_data)
+                return self._send_sms(client, message_data)
             elif action == "send_whatsapp":
-                return self._send_whatsapp(message_data)
+                return self._send_whatsapp(client, message_data)
             elif action == "send_quiz_reminder":
-                return self._send_quiz_reminder(message_data)
+                return self._send_quiz_reminder(client, message_data)
             elif action == "send_achievement_alert":
-                return self._send_achievement_alert(message_data)
+                return self._send_achievement_alert(client, message_data)
             else:
                 return {"error": f"Unknown action: {action}"}
                 
         except Exception as e:
             return {"error": f"Twilio operation failed: {e}"}
     
-    def _send_sms(self, message_data: Dict[str, Any]) -> Dict[str, Any]:
+    def _send_sms(self, client, message_data: Dict[str, Any]) -> Dict[str, Any]:
         """Send SMS message"""
         try:
-            message = self.client.messages.create(
+            message = client.messages.create(
                 body=message_data.get("body", ""),
                 from_=os.getenv('TWILIO_PHONE_NUMBER'),
                 to=message_data.get("to")
@@ -331,7 +336,7 @@ class TwilioNotificationTool(BaseTool):
         except Exception as e:
             return {"error": f"Failed to send SMS: {e}"}
     
-    def _send_whatsapp(self, message_data: Dict[str, Any]) -> Dict[str, Any]:
+    def _send_whatsapp(self, client, message_data: Dict[str, Any]) -> Dict[str, Any]:
         """Send WhatsApp message"""
         try:
             # WhatsApp numbers must be prefixed with 'whatsapp:'
@@ -341,7 +346,7 @@ class TwilioNotificationTool(BaseTool):
             
             from_number = os.getenv('TWILIO_WHATSAPP_NUMBER', 'whatsapp:+14155238886')
             
-            message = self.client.messages.create(
+            message = client.messages.create(
                 body=message_data.get("body", ""),
                 from_=from_number,
                 to=to_number
@@ -357,7 +362,7 @@ class TwilioNotificationTool(BaseTool):
         except Exception as e:
             return {"error": f"Failed to send WhatsApp message: {e}"}
     
-    def _send_quiz_reminder(self, message_data: Dict[str, Any]) -> Dict[str, Any]:
+    def _send_quiz_reminder(self, client, message_data: Dict[str, Any]) -> Dict[str, Any]:
         """Send quiz reminder notification"""
         try:
             subject = message_data.get("subject", "your studies")
@@ -381,12 +386,12 @@ Keep up the great work! 💪
             # Send via preferred method
             method = message_data.get("method", "sms")
             if method == "whatsapp":
-                return self._send_whatsapp({
+                return self._send_whatsapp(client, {
                     "to": message_data.get("phone_number"),
                     "body": body
                 })
             else:
-                return self._send_sms({
+                return self._send_sms(client, {
                     "to": message_data.get("phone_number"),
                     "body": body
                 })
@@ -394,7 +399,7 @@ Keep up the great work! 💪
         except Exception as e:
             return {"error": f"Failed to send quiz reminder: {e}"}
     
-    def _send_achievement_alert(self, message_data: Dict[str, Any]) -> Dict[str, Any]:
+    def _send_achievement_alert(self, client, message_data: Dict[str, Any]) -> Dict[str, Any]:
         """Send achievement/badge notification"""
         try:
             user_name = message_data.get("user_name", "Learner")
@@ -429,12 +434,12 @@ Continue learning on QuizFlow! 💪
             # Send via preferred method
             method = message_data.get("method", "sms")
             if method == "whatsapp":
-                return self._send_whatsapp({
+                return self._send_whatsapp(client, {
                     "to": message_data.get("phone_number"),
                     "body": body
                 })
             else:
-                return self._send_sms({
+                return self._send_sms(client, {
                     "to": message_data.get("phone_number"),
                     "body": body
                 })
@@ -449,23 +454,13 @@ class NotificationSchedulerTool(BaseTool):
     name: str = "Notification Scheduler Tool"
     description: str = "Manage notification schedules, preferences, and automated reminders"
     
-    def __init__(self):
-        super().__init__()
-        # Initialize tools without setting as attributes to avoid Pydantic issues
-        self._calendar_tool = None
-        self._twilio_tool = None
+    def get_calendar_tool(self):
+        """Get Google Calendar tool instance"""
+        return GoogleCalendarTool()
     
-    @property
-    def calendar_tool(self):
-        if self._calendar_tool is None:
-            self._calendar_tool = GoogleCalendarTool()
-        return self._calendar_tool
-    
-    @property
-    def twilio_tool(self):
-        if self._twilio_tool is None:
-            self._twilio_tool = TwilioNotificationTool()
-        return self._twilio_tool
+    def get_twilio_tool(self):
+        """Get Twilio notification tool instance"""
+        return TwilioNotificationTool()
     
     def _run(self, action: str, schedule_data: Dict[str, Any] = None) -> Dict[str, Any]:
         """Execute notification scheduling operations"""
@@ -497,7 +492,7 @@ class NotificationSchedulerTool(BaseTool):
             # Schedule calendar event for tomorrow
             tomorrow = datetime.utcnow().replace(hour=hour, minute=minute, second=0, microsecond=0) + timedelta(days=1)
             
-            calendar_result = self.calendar_tool._run("schedule_quiz_reminder", {
+            calendar_result = self.get_calendar_tool()._run("schedule_quiz_reminder", {
                 "reminder_time": tomorrow,
                 "subject": schedule_data.get("subject", "Daily Study"),
                 "user_email": schedule_data.get("user_email", ""),
@@ -547,7 +542,7 @@ class NotificationSchedulerTool(BaseTool):
             next_summary = today.replace(hour=hour, minute=minute, second=0, microsecond=0) + timedelta(days=days_to_add)
             
             # Schedule calendar event
-            calendar_result = self.calendar_tool._run("schedule_study_session", {
+            calendar_result = self.get_calendar_tool()._run("schedule_study_session", {
                 "start_time": next_summary,
                 "duration_minutes": 30,
                 "topic": "Weekly Progress Review",
@@ -577,11 +572,11 @@ class NotificationSchedulerTool(BaseTool):
             
             if method in ["sms", "whatsapp"]:
                 if notification_type == "quiz_reminder":
-                    return self.twilio_tool._run("send_quiz_reminder", notification_data)
+                    return self.get_twilio_tool()._run("send_quiz_reminder", notification_data)
                 elif notification_type == "achievement":
-                    return self.twilio_tool._run("send_achievement_alert", notification_data)
+                    return self.get_twilio_tool()._run("send_achievement_alert", notification_data)
                 else:
-                    return self.twilio_tool._run("send_sms" if method == "sms" else "send_whatsapp", {
+                    return self.get_twilio_tool()._run("send_sms" if method == "sms" else "send_whatsapp", {
                         "to": notification_data.get("phone_number"),
                         "body": notification_data.get("message", "QuizFlow notification")
                     })
